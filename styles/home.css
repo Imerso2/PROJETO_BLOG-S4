@@ -1,0 +1,124 @@
+:root{
+    --primary-color: #4CAF50;
+    --primary-color-light: #A5D6A7;
+	--gray-color-1: #2D2D2D;
+	--gray-color-2: #555555;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.headerMain{
+   display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 80px;
+	padding: 10px 15%;
+    border-bottom: 1px solid var(--primary-color-light);
+}
+
+.headerTitle{
+    font-size: 24px;
+	font-weight: bold;
+	color: var(--primary-color);
+}
+.headerText{
+    font-size: 18px;
+	color: var(--gray-color-1);
+}
+.mainContent{
+    width: 70%;
+    margin: 3% auto;
+	border-bottom: 1px solid var(--primary-color-light);
+}
+.mainHeader{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.mainTitle{
+    font-size: 24px;
+	font-weight: bold;
+	color: var(--gray-color-1);
+}
+.mainBtnAdicionar{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    height: 50px;
+    padding: 16px;
+    margin-left: auto;
+    background-color: var(--primary-color);
+    color: #000000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    margin-bottom: 10px;
+    border: 2px solid var(--primary-color-light);
+
+}
+
+.AdicionarIcon{
+    width: 40px;
+    height: 40px;
+    display: block;
+}
+.postCard{
+    border-radius: 8px;
+    margin-bottom: 20px;
+    height: 270px;
+    width: 210px;
+    border: 1px solid var(--gray-color-2);
+    
+}
+.postImage{
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+.postText{
+    text-align: left;
+    margin-bottom: 10px;
+}
+.postTitle{
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--gray-color-1);
+    max-width: 210px;
+}
+.postdescription{
+    font-size: 14px;
+    color: var(--gray-color-2);
+    margin-bottom: 8px;
+    max-width: 210px;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+.postInfo{
+    display:flex;
+}
+.postButtons{
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+.postBtnEditar{
+    background-color: var(--primary-color);
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 40%;
+    height: 30px;
+}
+.postBtnExcluir{
+    background-color: #FF5252;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 40%;
+    height: 30px;
+}
