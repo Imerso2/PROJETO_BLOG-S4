@@ -4,42 +4,45 @@
     --secondary-color: #F06368;
     --gray-color-1: #4e4e4e;
     --gray-color-2: #9995A6;
+    --gray-color-3: #202024;
+    --gray-color-4: #323238;
     --black-color: #000000;
-
+    --white-color: #FFFFFF;
 }
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+
 .headerMain{
-   display: flex;
+  display: flex;
 	align-items: center;
 	justify-content: space-between;
 	height: 80px;
-	padding: 10px 15%;
-    border-bottom: 1px solid var(--primary-color-light);
+  border-bottom: 1px solid var(--primary-color-light);
 }
 
 .headerTitle{
-    font-size: 24px;
+  margin-left: 15%;
+  font-size: 24px;
 	font-weight: bold;
 	color: var(--primary-color);
 }
 .headerText{
+  margin-right: 15%;
     font-size: 18px;
 	color: var(--gray-color-1);
 }
 .mainContent{
     width: 70%;
     margin: 3% auto;
-	border-bottom: 1px solid var(--primary-color-light);
+
 }
 .mainHeader{
     display: flex;
     align-items: center;
     text-align: center;
-    margin-bottom: 20px;
 }
 .mainTitle{
     font-size: 24px;
@@ -54,27 +57,34 @@
     padding: 16px;
     margin-left: auto;
     background-color: var(--primary-color);
-    color: var(--gray-color-2);
+    color: var(--white-color);
     border: none;
     border-radius: 12px;
     cursor: pointer;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     border: 2px solid var(--primary-color-light);
 
 }
+.postsContainer{
+  
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%;
+    justify-content: center;
 
-.AdicionarIcon{
-    color: var(--gray-color-2);
-    width: 16px;
-    height: 16px;
-    display: block;
 }
 .postCard{
     margin-bottom: 20px;
-    height: 422px;
-    width: 336px;
+    height: 350px;
+    width: 32%;
     
+}
+.AdicionarIcon{
+    color: var(--white-color);
+    width: 16px;
+    height: 16px;
+    display: block;
 }
 .postImage{
     width: 100%;
@@ -99,15 +109,13 @@
     font-size: 15px;
     color: var(--gray-color-1);
     margin-bottom: 8px;
-    max-width: 210px;
+    max-width: 100%;
     white-space: normal;
     overflow-wrap: break-word;
     word-wrap: break-word;
-    font-weight: 336;
-
 }
 .postInfo{
-    margin-bottom: 80px;
+    margin-bottom: 20px;
     display:flex;
     align-items: center;
     gap: 6px;
@@ -137,144 +145,155 @@
    
 }
 .postBtnEditar{
-    color: var(--gray-color-2);
+    color: var(--white-color);
     background-color: var(--primary-color);
     border: none;
     cursor: pointer;
-    border-radius: 4px;
     width: 160px;
-    height: 42px;
-    border: none;
-    border-radius: 10px;
+    height: 40px;
+    border-radius: 12px;
     cursor: pointer;
-  
+    text-align: center;
+    align-items: center;
 }
 
 .postBtnExcluir{
-    color: var(--gray-color-2);
+    color: var(--white-color);
     background-color: var(--secondary-color);
     border: none;
-    border-radius: 4px;
     cursor: pointer;
     width: 160px;
-    height: 42px;
-    border: none;
+    height: 40px;
     border-radius: 12px;
     cursor: pointer;
+    text-align: center;
+    align-items: center;
+}
+.imagExcluir{
+    color: var(--white-color);
+    width: 16px;
+    height: 16px;
+}
+.imagExcluir{
+    color: var(--white-color);
+    width: 16px;
+    height: 16px;
 }
 
-.BtnCarregar{
-  display: flex;
-  padding: 10px;
-  font-size: 20px;
-  color: var(--primary-color);
-  background-color: transparent;
-  border: 2px solid var(--gray-color-2);
-  border-radius: 16px;
-  justify-content: center;
-}
-
-/* Modal 
-.modal-overlay {
-  display: none;
+.criar{
+  display: none; /* genial deixa invisible massa demais */
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(18, 18, 20, 0.85);
-  backdrop-filter: blur(8px);
+  background: rgba(76, 76, 97, 0.85); /*  trasparente */ 
+  -webkit-backdrop-filter: blur(8px); /*  trasparente */ 
+  backdrop-filter: blur(8px); /*  trasparente */ 
   justify-content: center;
   align-items: center;
-  z-index: 1000;
-  animation: fadeIn 0.3s ease;
+
 }
 
-.modal-overlay.active {
+
+.criar.active {
   display: flex;
 }
 
-.modal {
-  background: var(--gray-900);
-  width: 90%;
+.criarMain {
+
+  background: var(--white-color);
   max-width: 480px;
   border-radius: 16px;
-  border: 1.5px solid var(--border);
+  border: 1.5px solid var(--gray-color-1);
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-  animation: slideUp 0.4s ease;
 }
 
-.modal-header {
-  background: var(--gray-800);
-  padding: 20px 24px;
+.criarHeader {
+  padding: 10px 24px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  border-bottom: 1.5px solid var(--border);
+  
 }
 
-.modal-header h2 {
-  font-size: 1.375rem;
+.titleText {
+  font-size: 24px;
   font-weight: 600;
-  color: var(--white);
+  color: var(--black-color);
+  width: 100%;
+} 
+.description{
+  font-size: 12px;
+  color: var(--gray-color-1);
+  padding: 5px 24px;
 }
-
-.close-btn {
-  background: none;
-  border: none;
-  color: var(--gray-100);
-  font-size: 1.5rem;
-  cursor: pointer;
-  width: 36px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-  transition: background 0.2s;
+.descriptionBox{
+  font-size: 12px;
+  color: var(--gray-color-1);
+  width: 100%;
+ 
 }
-
-.close-btn:hover {
-  background: var(--gray-700);
-}
-
-.modal-form {
+.formContainer {
   padding: 28px 24px;
 }
 
-.input-group {
-  margin-bottom: 20px;
+.inputBox {
+  margin-bottom: 15px;
 }
 
-.input-group label {
+.inputBox label {
   display: block;
-  margin-bottom: 8px;
-  font-weight: 500;
-  color: var(--gray-100);
-  font-size: 0.9375rem;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: var(--gray-color-1);
+  font-size: 16px;
 }
 
-.input-group input {
+.inputBox input {
   width: 100%;
-  padding: 14px;
-  background: var(--dark);
-  border: 1.5px solid var(--border);
+  padding: 12px;
+  background: var(--white-color);
+  border: 1.5px solid var(--gray-color-1);
   border-radius: 8px;
-  color: var(--white);
+  color: var(--black-color);
   font-size: 1rem;
   transition: border 0.2s;
 }
 
-.input-group input:focus {
+.inputBox input:focus {
   outline: none;
-  border-color: var(--purple);
+  border-color: var(--primary-color);
 }
 
-.modal-actions {
-  display: flex;
-  gap: 12px;
+.criarButtons {
   margin-top: 24px;
+  align-items: center;
+  text-align: center;
 }
-  */
-  
+.btnSalvar{
+    color: var(--white-color);
+    background-color: var(--primary-color);
+    border: none;
+    cursor: pointer;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 210px;
+    height: 30px;
+    text-align: center;
+    align-items: center;
+    
+}
+.btnCancelar{
+    color: var(--white-color);
+    background-color: var(--secondary-color);
+    border: none;
+    cursor: pointer;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 210px;
+    height: 30px;
+    text-align: center;
+    align-items: center;
+    
+}
