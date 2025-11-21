@@ -1,0 +1,14 @@
+{
+    "userPost": [
+        {
+            "nomePost": "",
+            "tituloPost": "",
+            "categoria":"",
+            "assuntoPost": "",
+            "UrlImagem":"",
+            "dataPost":"",
+            "idPost":""
+        }
+    ]
+
+}
