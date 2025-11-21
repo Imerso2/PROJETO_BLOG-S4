@@ -1,0 +1,115 @@
+@import url("../../Global.css");
+.criar{
+  display: none; /* genial deixa invisible massa demais */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-color-blur); /*  trasparente */ 
+  -webkit-backdrop-filter: blur(8px); /*  trasparente */ 
+  backdrop-filter: blur(8px); /*  trasparente */ 
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+.criar.active {
+  display: flex; /* genial deixa visivel agora massa demais */
+}
+
+.criarMain {
+
+  background: var(--white-back);
+  max-width: 480px;
+  border-radius: 16px;
+  border: 1.5px solid var(--gray);
+  overflow: hidden;
+  box-shadow: 0 20px 40px var(--black);
+}
+
+.criarHeader {
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+  
+}
+
+.titleText {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--black);
+  width: 100%;
+} 
+.description{
+  font-size: 16px;
+  color: var(--gray);
+  padding: 5px 24px;
+}
+.descriptionBox{
+  width: 100%;
+ 
+}
+.formContainer {
+  padding: 28px 24px;
+}
+
+.inputBox {
+  margin-bottom: 10px;
+}
+
+.inputBox label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: var(--gray);
+  font-size: 16px;
+}
+
+.inputBox input {
+  width: 100%;
+  padding: 10px;
+  background: var(--white-back);
+  border: 1.5px solid var(--gray);
+  border-radius: 8px;
+  color: var(--gray);
+  font-size: 16px;
+}
+
+.inputBox input:focus {
+  outline: none;
+  border-color: var(--primary-purple);
+}
+
+.criarButtons {
+  margin-top: 20px;
+  align-items: center;
+  text-align: center;
+}
+.btnSalvar{
+    color: var(--white);
+    background-color: var(--primary-purple);
+    border: none;
+    cursor: pointer;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 210px;
+    height: 30px;
+    text-align: center;
+    align-items: center;
+    
+}
+.btnCancelar{
+    color: var(--white);
+    background-color: var(--red);
+    border: none;
+    cursor: pointer;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 210px;
+    height: 30px;
+    text-align: center;
+    align-items: center;
+    
+}
