@@ -54,6 +54,6 @@ formUsuario.onsubmit = async (e) => {
         body: JSON.stringify(usuario),
  });
 };
-console.log(ano,mes,dia,hora,minutos);
+console.log(ano,mes,dia,hora);
 
 
