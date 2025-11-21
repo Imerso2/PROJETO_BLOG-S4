@@ -3,9 +3,18 @@
         {
             "nomePost": "",
             "tituloPost": "",
+            "categoria":"",
             "assuntoPost": "",
             "UrlImagem":"",
-            "dataPost":"" 
+            "dataPost": {
+                "ano":"",
+                "mes":"",
+                "dia":"",
+                "hora":"",
+                "minutos":""
+                
+                        },
+            "id":""
         }
     ]
 
