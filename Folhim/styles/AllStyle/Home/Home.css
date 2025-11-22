@@ -33,18 +33,15 @@
     padding: 0 24px;
 }
 
-
 .site-header {
     padding: 18px 0;
 }
-
 
 .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
 
 .logo {
     color: var(--corlaranjado);
@@ -63,16 +60,13 @@
    
 }
  .imgTecnologia{
-     width: 16px;
-     height: 16px;
+    
  }
  .imgJS{
-     width: 16px;
-     height: 16px;
+     
  }
  .imgHtmlCss{
-     width: 16px;
-     height: 16px;
+   
  }
 
 .mainHome {
