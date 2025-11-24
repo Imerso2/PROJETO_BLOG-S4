@@ -1,23 +1,7 @@
 @import url("../../Global.css");
 
 .headerMain{
-  display: flex;
-	align-items: center;
-	justify-content: space-between;
-	height: 80px;
-  border-bottom: 1px solid var(--primary-purple-light);
-}
-
-.headerTitle{
-  margin-left: 15%;
-  font-size: 24px;
-	font-weight: bold;
-	color: var(--primary-purple);
-}
-.headerText{
-  margin-right: 15%;
-    font-size: 18px;
-	color: var(--gray);
+    border-bottom: 1px solid var(--primary-purple-light);
 }
 .mainContent{
     width: 70%;

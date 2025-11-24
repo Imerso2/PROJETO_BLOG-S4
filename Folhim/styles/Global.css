@@ -23,8 +23,8 @@
 :root{
     --primary-purple: #7063F0;
     --primary-purple-light: rgba(102, 102, 238, 0.85);
-    --primary-color-blur: #9995A6;
-    --primary-purple-black: #261d3f;
+    --primary-color-blur: #9995a6a2;
+    --primary-purple-black: #39194e;
 
     --red: #F06368;
 
@@ -34,6 +34,14 @@
 
     --white: #ffffff;
     --white-back: #afa8f0;
+    --white-gray: #bdbdbd;
+
+    --dark-blue: #0d003a;
+    --orange: #eb8500;
+    --vine: #460000;
+    --vine-glass: #c21212;
+    --transition :#6f5283;
+
 }
 /*
 musicas pra escutar estilizando
