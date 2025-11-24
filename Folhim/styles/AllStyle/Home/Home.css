@@ -97,6 +97,38 @@
     border-radius: 30px;
     cursor: pointer;
 }
-.Populares{
+.populares{
+    display: flex;
+    flex-wrap: wrap;
     
+    margin-left: 15%;
+    margin-right: 15%;
+}
+.popularesBlog{
+    color: var(--primary-purple);
+    width: 100%;
+}
+.titles{
+    width: 100%;
+}
+.maisPopular{
+    margin-bottom: 20px;
+    height: 350px;
+    width: 50%;
+}
+
+.popularImg{
+    width: 100%;
+    
+}
+.popularInfo{
+    display: flex;
+}
+.postDateIcon{
+    height: 20px;
+    width: 20px;
+}
+.popularTimeIcon{
+    height: 20px;
+    width: 20px;
 }
