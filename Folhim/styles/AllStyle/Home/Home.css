@@ -55,27 +55,24 @@
 .mainHome{
     width: 100%;
     display: flex;
-    
 }
 .introductionBox{
     width: 100%;
     height: 500px;
-    
     text-align: center;
     background: linear-gradient(to bottom, var(--primary-purple-black) 40%,var(--transition), var(--white));
     background-color: var(--primary-purple-black);
 }
 .intrudutionTitle{  
      color: var(--white);
-     margin-top: 8%;
+     margin-top: 12%;
 }
 .intrudutionText{
     color: var(--white);
 }
 .moreButtons{
-    
     text-align: center;
-    margin-top: 2%;
+    margin-top: 4%;
     
 }
 .btnAdd{
@@ -97,38 +94,113 @@
     border-radius: 30px;
     cursor: pointer;
 }
-.populares{
-    display: flex;
-    flex-wrap: wrap;
-    
-    margin-left: 15%;
-    margin-right: 15%;
+.bntExploFinal{
+
+    background-color: var(--primary-purple);
+    color: var(--primary-purple-black);
+    border: var(--dark-blue);
+    height: 35px;
+    width: 200px;
+    border-radius: 30px;
+    cursor: pointer;
 }
-.popularesBlog{
-    color: var(--primary-purple);
-    width: 100%;
+.explorar{
+    margin: 10px;
+    text-align: center;
 }
-.titles{
-    width: 100%;
-}
-.maisPopular{
-    margin-bottom: 20px;
-    height: 350px;
-    width: 50%;
+/* daqui pra baixo é territorio desconhecido, não foi eu, o
+autor principal quem escreveu o codigo abaixo CUIDADO*/
+.container {
+    width: 90%;
+    max-width: 1250px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 60px;
 }
 
-.popularImg{
+.tag-top {
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #7b5cff;
+}
+
+.destaque h1 {
+    margin-top: 8px;
+    margin-bottom: 25px;
+    font-size: 32px;
+}
+
+main{
+    align-items: center;
+}
+
+.card-destaque {
+    background: #fff;
+}
+
+.card-destaque img {
     width: 100%;
+    height: 330px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.tag {
+    color: #9078fa;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.card-destaque h2 {
+    margin-top: 14px;
+    font-size: 22px;
+    line-height: 1.4;
+}
+
+.meta {
+    margin-top: 8px;
+    font-size: 13px;
+    color: #666;
+}
+.populares{
+    margin: 45px;
     
 }
-.popularInfo{
+.populares h3 {
+    font-size: 22px;
+    margin-bottom: 25px;
+}
+
+.popular-item {
     display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #9078fa;
 }
-.postDateIcon{
-    height: 20px;
-    width: 20px;
+
+.popular-item img {
+    width: 80px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 5px;
 }
-.popularTimeIcon{
-    height: 20px;
-    width: 20px;
+
+.popular-item h4 {
+    font-size: 15px;
+    margin: 4px 0;
+    font-weight: 600;
 }
+
+/* acaba aqui, o que esta (°°) abaixo é normal
+                          /\
+                          ||*/
+
+.postsContainerHome{
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%;
+
+}              
