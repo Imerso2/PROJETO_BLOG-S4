@@ -1,14 +1,14 @@
 {
-    "userPost": [
-        {
-            "nomePost": "",
-            "tituloPost": "",
-            "categoria":"",
-            "assuntoPost": "",
-            "UrlImagem":"",
-            "dataPost":"",
-            "idPost":""
-        }
-    ]
-
+  "userPost": [
+    {
+      "nomePost": "",
+      "tituloPost": "",
+      "categoria": "",
+      "assuntoPost": "",
+      "UrlImagem": "",
+      "dataPost": "",
+      "idPost": "",
+      "id": ""
+    }
+  ]
 }
