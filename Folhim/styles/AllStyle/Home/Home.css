@@ -94,20 +94,7 @@
     border-radius: 30px;
     cursor: pointer;
 }
-.bntExploFinal{
 
-    background-color: var(--primary-purple);
-    color: var(--primary-purple-black);
-    border: var(--dark-blue);
-    height: 35px;
-    width: 200px;
-    border-radius: 30px;
-    cursor: pointer;
-}
-.explorar{
-    margin: 10px;
-    text-align: center;
-}
 /* daqui pra baixo é territorio desconhecido, não foi eu, o
 autor principal quem escreveu o codigo abaixo CUIDADO*/
 .container {
@@ -130,7 +117,14 @@ autor principal quem escreveu o codigo abaixo CUIDADO*/
     margin-bottom: 25px;
     font-size: 32px;
 }
-
+.info{
+    margin-top: 2%;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
 main{
     align-items: center;
 }
@@ -150,18 +144,33 @@ main{
     color: #9078fa;
     font-size: 12px;
     font-weight: bold;
+    text-align: center;
 }
-
 .card-destaque h2 {
     margin-top: 14px;
     font-size: 22px;
     line-height: 1.4;
 }
+.irArtigo{
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+}
+.irArtigo :hover{
+    transition: 500ms;
+    color: var(--primary-purple);
+    text-decoration: underline;
+}
 
 .meta {
-    margin-top: 8px;
+    margin-left: auto;
     font-size: 13px;
     color: #666;
+    align-items: center;
+    text-align: center;
 }
 .populares{
     margin: 45px;
@@ -173,6 +182,7 @@ main{
 }
 
 .popular-item {
+    align-items: center;
     display: flex;
     gap: 15px;
     margin-bottom: 25px;
@@ -198,9 +208,53 @@ main{
                           ||*/
 
 .postsContainerHome{
-    margin: 0 auto;
+
+    margin-left: 15%;
+    margin-right: 15%;
     display: flex;
     flex-wrap: wrap;
     gap: 2%;
 
-}              
+}
+.sumir{
+    display: none;
+}
+.sumir.ativo{
+    display: block;
+}
+.postCardHome{ 
+    margin-bottom: 20px;
+    height: 350px;
+    width: 30%;
+}
+.searchBox{
+    justify-content: right;
+    display: flex;
+    border: 1px solid var(--primary-purple-light);
+    
+}
+.searchInp{
+    border: none;
+    outline: none;
+    font-size: 14px;
+    height: 20px;
+    width: 200px;
+}
+.lupa{ 
+    background-color: var(--primary-purple);
+    height: 20px;
+    width: 20px;
+}
+.homeTitle{
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--black);
+    
+}
+.homeHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 15%;
+    margin-right: 15%;
+}
