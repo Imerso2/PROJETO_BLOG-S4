@@ -55,7 +55,7 @@ form.onsubmit = async function (e) {
     categoria: categoria.value.trim(),
     assuntoPost: assunto.value,
     UrlImagem: url.value.trim(),
-    dataPost: date
+    dataPost: `${dia} ${monthString} ${ano}`
   };
    try {
     if (editId) {
@@ -81,32 +81,28 @@ form.onsubmit = async function (e) {
   }
 };
 
-async function listarUsuarios(filtro = "") {
+// problema é aqui
+
+async function listarUsuarios() {
   try {
     const res = await fetch(API_URL); 
     usuarios = await res.json();
 
-    const filtrados = usuarios.filter(
-      (u) =>
-        u.tituloPost.toLowerCase().includes(filtro)  
-    );
-
     container.innerHTML = "";
 
-   
-    filtrados.forEach((u) => {
+    usuarios.forEach((u) => {
       const card = document.createElement("div");
-    card.className = "postCard";
-    card.innerHTML = `<img class="postImage" src="../../assets/THE EIght.png" alt="">
+      card.className = "postCard";
+      card.innerHTML = `<img class="postImage" src="${u.UrlImagem}" alt="">
                 <div class="postTexts">
-                  <p class="postTitle">${u.tituloPost}</p>
+                    <p class="postTitle">${u.tituloPost}</p>
                     <p class="postdescription">${u.assuntoPost}</p>
                 </div>
                 <div class="postInfo">
                     <img src="../../assets/calendário1.png" alt="" class="postDateIcon">
-                    <p class="postDateText">${u.dataPost},${u.dataPost}</p>
+                    <p class="postDateText">${u.dataPost}</p>
                     <p> • </p>
-                    <img src="${u.UrlImagem}" alt="" class="postAutorIcon">
+                    <img src="../../assets/contato1.png" alt="" class="postAutorIcon">
                     <p class="postAuthorText">${u.nomePost}</p>
                 </div>
                 <div class="postButtons">   
@@ -114,37 +110,13 @@ async function listarUsuarios(filtro = "") {
                  
                     <button class="postBtnExcluir"> <img src="../../assets/lápis.png" alt="" class="imagExcluir"> Excluir</button> 
                 </div>`
-    container.appendChild(card);
-    const btnEditar = card.querySelector(".postBtnEditar");
-btnEditar.onclick = () => {
-    nome.value = u.nomePost;
-title.value = u.tituloPost;
-categoria.value = u.categoria;
-assunto.value = u.assuntoPost;
-url.value = u.UrlImagem;
-
-
-    titulo.textContent = "Editar postagem";
-    criar.classList.add("active");
-};
-
-});
-
-    
-
-      card.querySelector(".postBtnExcluir").onclick = async () => {
-        if (confirm(`Excluir ${u.nomePost}?`)) {
-          await fetch(`${API_URL}/${u.id}`, { method: "DELETE" });
-          
-        }
-      };
-
+    });
       container.appendChild(card);
-    
-  } 
-  catch (err) {
-    console.error(err);
+  }
+  catch (error) {
+    console.error(error);
   }
 }
+
 
 listarUsuarios();
