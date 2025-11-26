@@ -1,28 +1,6 @@
 @import url("../../Global.css");
 
-:root{
-    --primary-purple: #7063F0;
-    --primary-purple-light: rgba(102, 102, 238, 0.85);
-    --primary-color-blur: #9995a6a2;
-    --primary-purple-black: #39194e;
 
-    --red: #F06368;
-
-    --gray: #4e4e4e;
-    --dark-gray:#2420204e;
-    --black: #000000;
-
-    --white: #ffffff;
-    --white-back: #afa8f0;
-    --white-gray: #bdbdbd;
-
-    --dark-blue: #0d003a;
-    --orange: #eb8500;
-    --vine: #460000;
-    --vine-glass: #c21212;
-   
-    
-}
     /*Rato AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA*/
     /*pra la ana ratinha vea*/
 .alterPage{

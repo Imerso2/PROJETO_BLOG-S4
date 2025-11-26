@@ -6,7 +6,8 @@
 .mainContent{
     width: 70%;
     margin: 3% auto;
-
+    align-items: center;
+    text-align: center;
 }
 .mainHeader{
     display: flex;
@@ -36,16 +37,23 @@
 
 }
 .postsContainer{
-  
+    
     display: flex;
     flex-wrap: wrap;
     gap: 2%;
-
+    
 }
 .postCard{
     margin-bottom: 20px;
     height: 350px;
     width: 32%;
+    display: flex;
+    flex-direction: column;
+}
+.content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .AdicionarIcon{
     color: var(--white);
@@ -53,7 +61,15 @@
     height: 16px;
     display: block;
 }
+.imgBox{
+    max-height: 150px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
 .postImage{
+    
     width: 100%;
     border-radius: 4px;
     margin-bottom: 5px;
@@ -62,6 +78,9 @@
     text-align: left;
     margin-bottom: 10px;
     padding : 0 10px;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
 
 }
 .postTitle{
@@ -86,33 +105,34 @@
     display:flex;
     align-items: center;
     gap: 6px;
+    flex: 1;
+    
 }
-
 .postAuthorText{
    font-size: 14px;
    color: var(--dark-gray);
 }
 
 .postAutorIcon{
-  width: 16px;
-  height: 16px;
+    width: 16px;
+    height: 16px;
 }
 
 .postDateText{
-   font-size: 14px;
-    color: var(--dark-gray);
+     font-size: 14px;
+        color: var(--dark-gray);
 }
 
 .postButtons{
-    display: flex;
-    gap: 5px;
-    align-items: center;
-    justify-content: space-between;
-    text-align: center;
-   
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
 }
+
 .postBtnEditar{
-    color: var(--white);
+        color: var(--white);
     background-color: var(--primary-purple);
     border: none;
     cursor: pointer;

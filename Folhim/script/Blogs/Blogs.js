@@ -26,6 +26,7 @@ const card = document.createElement("div");
 
 const container = document.getElementById("postsContainer");
 
+let usuarios = [];
 let IDpost = 0;
 let editId = null;
 
@@ -34,8 +35,9 @@ btnAdicionar.addEventListener('click', () =>{
     titulo.textContent = "Criar postagem";
     description.textContent = "Preencha os dados no formulario para criar uma postagem"
     criar.classList.add("active");
+   
     editId = null;
-    
+    console.log("s9iudui");
 });
 
 const btnCancelar = document.getElementById("btnCancelar");
@@ -92,8 +94,13 @@ async function listarUsuarios() {
 
     usuarios.forEach((u) => {
       const card = document.createElement("div");
-      card.className = "postCard";
-      card.innerHTML = `<img class="postImage" src="${u.UrlImagem}" alt="">
+      card.classList.add("postCard");
+    
+      card.innerHTML = `
+       <div class="imgBox">
+      <img  src="${u.UrlImagem}" onerror="this.src='../../assets/teste.jpeg'" alt=""
+      class="postImage">
+         </div>
                 <div class="postTexts">
                     <p class="postTitle">${u.tituloPost}</p>
                     <p class="postdescription">${u.assuntoPost}</p>
@@ -110,8 +117,9 @@ async function listarUsuarios() {
                  
                     <button class="postBtnExcluir"> <img src="../../assets/lápis.png" alt="" class="imagExcluir"> Excluir</button> 
                 </div>`
+                container.appendChild(card);
+                console.log("teste");
     });
-      container.appendChild(card);
   }
   catch (error) {
     console.error(error);

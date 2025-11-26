@@ -19,7 +19,9 @@
     font-size: 18px;
 	color: var(--gray);
 }
-
+.headerText.teste{
+    color: var(--gray);
+}
 .headerHome{
     top: 0;
     width: 100%;

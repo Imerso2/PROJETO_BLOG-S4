@@ -10,7 +10,7 @@
 <body>
     <header class="headerMain">
       <a href="../Home/Home.html" class="headerTitle">Folhim Blog</a>
-        <p class="headerText">Bem vindo</p>
+        <p class="headerText" id="teste">Bem vindo</p>
     </header>
     <main class="mainContent">
         <div class="mainHeader">
@@ -20,72 +20,77 @@
         <div class="postsContainer" id="postsContainer">
 
             <div class="postCard">
+              <div class="imgBox">
                 <img class="postImage" src="../../assets/THE EIght.png" alt="">
+              </div>
+              <div class="content">
+
                 <div class="postTexts">
-                    <p class="postTitle">Título do Post</p>
+                  <p class="postTitle">Título do Post</p>
                     <p class="postdescription">colocarijogyuihjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj maximo de letras e if>a=br</p>
+                  </div>
+                    <div class="postInfo">
+                      <img src="../../assets/calendário1.png" alt="" class="postDateIcon">
+                      <p class="postDateText">2, fev</p>
+                      <p> • </p>
+                      <img src="../../assets/contato1.png" alt="" class="postAutorIcon">
+                      <p class="postAuthorText">romario</p>
+                    </div>
+                  </div>
+                    <div class="postButtons">   
+                      <button class="postBtnEditar"> <img src="../../assets/lápis.png" alt="" class="imagEditar"> Editar</button>
+                      
+                      <button class="postBtnExcluir"> <img src="../../assets/lápis.png" alt="" class="imagExcluir"> Excluir</button> 
+                    </div>
                 </div>
-                <div class="postInfo">
-                    <img src="../../assets/calendário1.png" alt="" class="postDateIcon">
-                    <p class="postDateText">2, fev</p>
-                    <p> • </p>
-                    <img src="../../assets/contato1.png" alt="" class="postAutorIcon">
-                    <p class="postAuthorText">romario</p>
-                </div>
-                <div class="postButtons">   
-                    <button class="postBtnEditar"> <img src="../../assets/lápis.png" alt="" class="imagEditar"> Editar</button>
-                 
-                    <button class="postBtnExcluir"> <img src="../../assets/lápis.png" alt="" class="imagExcluir"> Excluir</button> 
-                </div>
-                </div>
 
-                <!-- modal, fique de boas só copiar e mudar as besteirinhas-->               
-    <div class="criar" id="criarTrasparente">
+                
+              </main>
+              <!-- modal, fique de boas só copiar e mudar as besteirinhas-->               
+  <div class="criar" id="criarTrasparente">
 
-      <div class="criarMain">
-        <div class="criarHeader">
-          <p id="criarTitle" class="titleText"></p>
-        </div>
-        <div class="descriptionBox">
-          <p id="description" class="description"></p>
-        </div>
-        <form id="formUsuario" class="formContainer">
-          <div class="inputBox">
-            <label for="nome"> Nome </label>
-            <input type="text" id="nome" placeholder="Informe seu nome" required/>
-          </div>
-
-          <div class="inputBox">
-            <label for="url"> Título </label>
-            <input type="text" id="titulo" placeholder="Informe o titulo" required/>
-          </div>
-          
-          <div class="inputBox">
-            <label for="categoria"> Categoria </label>
-            <input type="text" id="categoria" placeholder="Informe a categoria" required/>
-          </div>
-          
-          <div class="inputBox">
-            <label for="url"> URL da imagem </label>
-            <input type="url" id="URL" placeholder="Informe a URL da capa" required/>
-          </div>
-          
-
-          <div class="inputBox">
-            <label for="assunto"> Assunto </label>
-            <input type="text" id="assunto" placeholder="Informe o assunto do blog" required/>
-          </div>
-
-          <div class="criarButtons">
-            <button type="button" id="btnCancelar" class="btnCancelar"> Cancelar </button>
-            <button type="submit" class="btnSalvar" id=""> Salvar </button>
-          </div>
-        </form>
+    <div class="criarMain">
+      <div class="criarHeader">
+        <p id="criarTitle" class="titleText"></p>
       </div>
+      <div class="descriptionBox">
+        <p id="description" class="description"></p>
+      </div>
+      <form id="formUsuario" class="formContainer">
+        <div class="inputBox">
+          <label for="nome"> Nome </label>
+          <input type="text" id="nome" placeholder="Informe seu nome" required/>
+        </div>
 
+        <div class="inputBox">
+          <label for="url"> Título </label>
+          <input type="text" id="titulo" placeholder="Informe o titulo" required/>
+        </div>
+        
+        <div class="inputBox">
+          <label for="categoria"> Categoria </label>
+          <input type="text" id="categoria" placeholder="Informe a categoria" required/>
+        </div>
+        
+        <div class="inputBox">
+          <label for="url"> URL da imagem </label>
+          <input type="url" id="URL" placeholder="Informe a URL da capa" required/>
+        </div>
+        
+
+        <div class="inputBox">
+          <label for="assunto"> Assunto </label>
+          <input type="text" id="assunto" placeholder="Informe o assunto do blog" required/>
+        </div>
+
+        <div class="criarButtons">
+          <button type="button" id="btnCancelar" class="btnCancelar"> Cancelar </button>
+          <button type="submit" class="btnSalvar" > Salvar </button>
+        </div>
+      </form>
     </div>
-    
-  </main>
-  <script src="../../script/Blogs/Blogs.js"></script>
+
+  </div>
+              <script src="../../script/Blogs/Blogs.js"></script>
 </body>
 </html>
