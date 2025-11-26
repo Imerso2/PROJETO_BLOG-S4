@@ -22,6 +22,7 @@ const title = document.getElementById("titulo");
 const titulo = document.getElementById("criarTitle");
 const criar = document.getElementById("criarTrasparente");
 const description = document.getElementById("description");
+const card = document.createElement("div");
 
 const container = document.getElementById("postsContainer");
 
@@ -79,20 +80,34 @@ form.onsubmit = async function (e) {
     console.error(err);
   }
 };
-function listarUsuarios() {
-    const card = document.createElement("div");
+
+async function listarUsuarios(filtro = "") {
+  try {
+    const res = await fetch(API_URL); 
+    usuarios = await res.json();
+
+    const filtrados = usuarios.filter(
+      (u) =>
+        u.tituloPost.toLowerCase().includes(filtro)  
+    );
+
+    container.innerHTML = "";
+
+   
+    filtrados.forEach((u) => {
+      const card = document.createElement("div");
     card.className = "postCard";
     card.innerHTML = `<img class="postImage" src="../../assets/THE EIght.png" alt="">
                 <div class="postTexts">
-                  <p class="postTitle">${title.value}</p>
-                    <p class="postdescription">${assunto.value}</p>
+                  <p class="postTitle">${u.tituloPost}</p>
+                    <p class="postdescription">${u.assuntoPost}</p>
                 </div>
                 <div class="postInfo">
                     <img src="../../assets/calendário1.png" alt="" class="postDateIcon">
-                    <p class="postDateText">${dia},${monthString}</p>
+                    <p class="postDateText">${u.dataPost},${u.dataPost}</p>
                     <p> • </p>
-                    <img src="${url.value.trim()}" alt="" class="postAutorIcon">
-                    <p class="postAuthorText">${nome.value}</p>
+                    <img src="${u.UrlImagem}" alt="" class="postAutorIcon">
+                    <p class="postAuthorText">${u.nomePost}</p>
                 </div>
                 <div class="postButtons">   
                     <button class="postBtnEditar"> <img src="../../assets/lápis.png" alt="" class="imagEditar"> Editar</button>
@@ -100,4 +115,36 @@ function listarUsuarios() {
                     <button class="postBtnExcluir"> <img src="../../assets/lápis.png" alt="" class="imagExcluir"> Excluir</button> 
                 </div>`
     container.appendChild(card);
+    const btnEditar = card.querySelector(".postBtnEditar");
+btnEditar.onclick = () => {
+    nome.value = u.nomePost;
+title.value = u.tituloPost;
+categoria.value = u.categoria;
+assunto.value = u.assuntoPost;
+url.value = u.UrlImagem;
+
+
+    titulo.textContent = "Editar postagem";
+    criar.classList.add("active");
+};
+
+});
+
+    
+
+      card.querySelector(".postBtnExcluir").onclick = async () => {
+        if (confirm(`Excluir ${u.nomePost}?`)) {
+          await fetch(`${API_URL}/${u.id}`, { method: "DELETE" });
+          
+        }
+      };
+
+      container.appendChild(card);
+    
+  } 
+  catch (err) {
+    console.error(err);
+  }
 }
+
+listarUsuarios();
