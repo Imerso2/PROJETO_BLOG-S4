@@ -1,3 +1,4 @@
+
 const API_URL = "http://localhost:3000/userPost";
 
 //dataaaaaaaaa
@@ -12,6 +13,7 @@ const months = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', '
 const monthString = months[mes];
 //dataaaaaaaaa
 
+const apagar = document.getElementById("btnCancelarExcluir");
 const btnAdicionar = document.getElementById("btnAdd");
 const nome = document.getElementById("nome");
 const categoria = document.getElementById("categoria")
@@ -20,8 +22,11 @@ const assunto = document.getElementById("assunto");
 const form = document.getElementById("formUsuario");
 const title = document.getElementById("titulo");
 const titulo = document.getElementById("criarTitle");
+const excluirTitulo = document.getElementById("ExcluirTitle");
 const criar = document.getElementById("criarTrasparente");
+const Excluir = document.getElementById("excluirTrasparente");
 const description = document.getElementById("description");
+const excluirDescription = document.getElementById("descriptionExcluir");
 const card = document.createElement("div");
 
 const container = document.getElementById("postsContainer");
@@ -97,10 +102,10 @@ async function listarUsuarios() {
       card.classList.add("postCard");
     
       card.innerHTML = `
-       <div class="imgBox">
-      <img  src="${u.UrlImagem}" onerror="this.src='../../assets/teste.jpeg'" alt=""
-      class="postImage">
-         </div>
+      <div class="imgBox">
+        <img  src="${u.UrlImagem}"
+        class="postImage">
+      </div>
                 <div class="postTexts">
                     <p class="postTitle">${u.tituloPost}</p>
                     <p class="postdescription">${u.assuntoPost}</p>
@@ -119,12 +124,23 @@ async function listarUsuarios() {
                 </div>`
                 container.appendChild(card);
                 console.log("teste");
-    });
-  }
-  catch (error) {
-    console.error(error);
+
+                card.querySelector(".postBtnExcluir").onclick = async () => {
+                excluirTitulo.textContent = "Excluir postagem";
+                excluirDescription.textContent = "Essa ação não pode ser desfeita";
+                Excluir.classList.add("active");
+
+                apagar.addEventListener('click', async () => {
+                  await fetch(`${API_URL}/${u.id}`, { method: "DELETE" });
+                  listarUsuarios();
+                  console.log("deletado");
+                  Excluir.classList.remove("active");
+                });
+              };
+            });
+  } catch (err) {
+    console.error(err);
   }
 }
-
-
+     
 listarUsuarios();

@@ -37,7 +37,8 @@
 
 }
 .postsContainer{
-    
+    border: 1px dashed var(--primary-purple-light);
+    border-radius: 5px;
     display: flex;
     flex-wrap: wrap;
     gap: 2%;
@@ -45,14 +46,13 @@
 }
 .postCard{
     margin-bottom: 20px;
-    height: 350px;
     width: 32%;
     display: flex;
     flex-direction: column;
 }
 .content{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
 }
 .AdicionarIcon{
@@ -61,18 +61,15 @@
     height: 16px;
     display: block;
 }
-.imgBox{
-    max-height: 150px;
-    width: 100%;
-    overflow: hidden;
-    border-radius: 4px;
-    margin-bottom: 5px;
-}
+
 .postImage{
-    
     width: 100%;
+    height: 150px;
+    object-fit: cover;   /* mantém proporção, corta corretamente */
     border-radius: 4px;
     margin-bottom: 5px;
+
+
 }
 .postText{
     text-align: left;
@@ -166,4 +163,14 @@
     width: 16px;
     height: 16px;
 }
-
+.returnImg{
+    width: 30px;
+    height: 30px;
+    border: 3px solid var(--primary-purple);
+    border-radius: 20px;
+}
+.headerUserInfo{
+    width: 15%;
+    display: flex;
+    align-items: center;
+}

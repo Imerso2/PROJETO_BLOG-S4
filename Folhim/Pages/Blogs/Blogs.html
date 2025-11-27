@@ -10,19 +10,23 @@
 <body>
     <header class="headerMain">
       <a href="../Home/Home.html" class="headerTitle">Folhim Blog</a>
+      <div class="headerUserInfo">
         <p class="headerText" id="teste">Bem vindo</p>
+        <a class="return" title="return" href="../Home/Home.html" ><img class="returnImg" alt="return" src="../../assets/retun.png"></a>
+      </div>
     </header>
     <main class="mainContent">
         <div class="mainHeader">
             <p class="mainTitle">Minhas publicações</p>
             <button type="button" title="dfjdbh" class="mainBtnAdicionar" id="btnAdd"><img class="AdicionarIcon" src="../../assets/soma.png" alt="">Novo Post</button>
+
         </div>
         <div class="postsContainer" id="postsContainer">
 
             <div class="postCard">
-              <div class="imgBox">
+             
                 <img class="postImage" src="../../assets/THE EIght.png" alt="">
-              </div>
+          
               <div class="content">
 
                 <div class="postTexts">
@@ -91,6 +95,26 @@
     </div>
 
   </div>
+
+    <div class="excluir" id="excluirTrasparente">
+
+    <div class="criarExluir">
+      <div class="criarHeader">
+        <p id="ExcluirTitle" class="titleText"></p>
+      </div>
+      <div class="descriptionBox">
+        <p id="descriptionExcluir" class="description"></p>
+      </div>
+
+        <div class="criarButtons">
+          <button type="button" id="btnCancelarExcluir" class="btnCancelar"> Excluir </button>
+          <button type="button" id="btnExcluir" class="btnSalvar"> Cancelar </button>
+          
+        </div>
+    </div>
+
+  </div>
+
               <script src="../../script/Blogs/Blogs.js"></script>
 </body>
 </html>
