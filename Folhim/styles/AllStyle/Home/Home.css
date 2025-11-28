@@ -186,12 +186,6 @@ autor principal quem escreveu o codigo abaixo CUIDADO*/
     flex-wrap: wrap;
     gap: 2%;
 }
-.sumir{
-    display: none;
-}
-.sumir.ativo{
-    display: block;
-}
 .postCardHome{ 
     margin-bottom: 20px;
     height: 350px;
@@ -255,4 +249,16 @@ img {
 .topImg{
     height: 100%;
     width: 100%;
+}
+.nada{
+    display: none;
+    text-align: center;
+    align-items: center;
+    margin-top: 50px;
+    color: var(--gray);
+    font-size: 18px;
+
+}
+.nada.nada{
+    display: flex;
 }
