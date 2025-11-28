@@ -25,9 +25,8 @@ Pai nosso que estas no Ceu
 Server DB
 1- ajeitar uns bagulhetes
 
-+==+==+==+==+==+==+==+==+==DETALHAMENTO==+==+==+==+==+==+==+==+==+==+==+==
-
-Tarefa 1 Geral
+# +==+==+==+==+==+==+==+==+==DETALHAMENTO==+==+==+==+==+==+==+==+==+==+==+==
+## Tarefa 1 Geral 
 No home.html é aquilo, olhar pensar e criar, o header e footer de todas as
 paginas é igual então é só copiar o header e o footer do Blog.html, o CSS
 dos dois ja esta feito então é mais simples, as imagems pode usar a que 
