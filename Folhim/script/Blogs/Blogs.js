@@ -80,7 +80,7 @@ form.onsubmit = async function (e) {
     }
 
     criar.classList.remove("active");
-    listarUsuarios();
+    listarArtigos();
     form.reset();
     
   } catch (err) {
@@ -89,7 +89,7 @@ form.onsubmit = async function (e) {
 };
 
 
-async function listarUsuarios() {
+async function listarArtigos() {
   try {
     const res = await fetch(API_URL); 
     usuarios = await res.json();
@@ -135,7 +135,7 @@ async function listarUsuarios() {
                 
                 apagar.addEventListener('click', async () => {
                   await fetch(`${API_URL}/${u.id}`, { method: "DELETE" });
-                  listarUsuarios();
+                  listarArtigos();
                   console.log("deletado");
                   Excluir.classList.remove("active");
                 });
@@ -160,4 +160,4 @@ async function listarUsuarios() {
   }
 }
      
-listarUsuarios();
+listarArtigos();

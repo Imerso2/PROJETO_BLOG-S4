@@ -1,51 +1,32 @@
 
 const API_URL = "http://localhost:3000/userPost";
 
-//dataaaaaaaaa
+
 const date = new Date();
-const dia = date.getDate();
-const mes = date.getMonth();
-const ano = date.getFullYear();
 const hora = date.getHours();
 const minuto = date.getMinutes();
+let usuarios = [];
 
-
-const months = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
-const monthString = months[mes];
-//dataaaaaaaaa
-
-const apagar = document.getElementById("btnCancelarExcluir");
-const btnAdicionar = document.getElementById("btnAdd");
-const nome = document.getElementById("nome");
-const categoria = document.getElementById("categoria")
-const url = document.getElementById("URL");
-const assunto = document.getElementById("assunto");
-const form = document.getElementById("formUsuario");
-const title = document.getElementById("titulo");
-const titulo = document.getElementById("criarTitle");
-const excluirTitulo = document.getElementById("ExcluirTitle");
-const criar = document.getElementById("criarTrasparente");
-const Excluir = document.getElementById("excluirTrasparente");
-const description = document.getElementById("description");
-const excluirDescription = document.getElementById("descriptionExcluir");
 const card = document.createElement("div");
 const nada = document.getElementById("nada");
-
 const container = document.getElementById("posts");
 
-let usuarios = [];
-let IDpost = 0;
-let editId = null;
+const searchInput = document.getElementById("searchInput");
 
+// coletar o filter
+searchInput.addEventListener("input", (e) => {
+  const filter = e.target.value.trim().toLowerCase();
+  container.innerHTML = "";
+  listarArtigos(filter);
+});
 
-
-
-async function listarUsuarios(filter = "") {
+// listar os artigos
+async function listarArtigos(filter = "") {
   try {
     const res = await fetch(API_URL); 
     usuarios = await res.json();
 
-    
+    // filtro :)
     const filtrados = usuarios.filter(
       (u) =>
         u.categoria.toLowerCase().includes(filter) ||
@@ -62,6 +43,7 @@ async function listarUsuarios(filter = "") {
       const card = document.createElement("div");
       card.classList.add("postCard");
     
+      // criando o card
       card.innerHTML = `
       <div class="imgBox">
         <img  src="${u.UrlImagem}"
@@ -81,11 +63,17 @@ async function listarUsuarios(filter = "") {
                `
                 container.appendChild(card);
                 console.log("teste");
+              
 
             });
+            
   } catch (err) {
     console.error(err);
   }
 }
-     
-listarUsuarios();
+
+
+
+// chamada de função
+listarArtigos();
+
