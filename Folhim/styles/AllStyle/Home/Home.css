@@ -262,3 +262,77 @@ img {
 .nada.nada{
     display: flex;
 }
+
+/* é pra ser o footer né */
+
+footer{
+    background-color: var(--primary-purple-black);
+    display: flex;
+    flex-wrap: wrap;
+    height: 20vh;
+    justify-content:center;
+    width: 100%;
+    align-items: center
+}
+
+.footerMain{
+  
+    
+}
+   
+.footerText{
+    
+}
+
+.footerTitle{
+    display: flex;
+    align-items: center;    
+}
+
+.footerDescription{
+    display: flex;
+    align-items: center;
+    font-size: 6px;
+    color: var(--gray);
+
+}
+
+.menu{
+   
+  
+}
+
+.DepoisMuda{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 8px;
+    display: block;  
+    text-decoration: none;
+    color: var(--white);
+
+}
+
+.footerLink, .footerLink {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 8px;
+    display: block;  
+    text-decoration: none;
+    color: var(--orange);
+   
+}
+
+.iconSobre, .iconPublicar{
+    height: 15px;
+    width: 15px;  
+    
+}
+
+.footerCopy{
+    text-align: center;  
+    margin-top: 20px;     
+    width: 100%;     
+    color: var(--white);     
+}
