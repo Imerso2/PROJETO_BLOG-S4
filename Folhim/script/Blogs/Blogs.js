@@ -13,6 +13,7 @@ const months = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', '
 const monthString = months[mes];
 //dataaaaaaaaa
 
+const cancelarApagar = document.getElementById("btnExcluir");
 const apagar = document.getElementById("btnCancelarExcluir");
 const btnAdicionar = document.getElementById("btnAdd");
 const nome = document.getElementById("nome");
@@ -40,9 +41,8 @@ btnAdicionar.addEventListener('click', () =>{
     titulo.textContent = "Criar postagem";
     description.textContent = "Preencha os dados no formulario para criar uma postagem"
     criar.classList.add("active");
-   
     editId = null;
-    console.log("s9iudui");
+    
 });
 
 const btnCancelar = document.getElementById("btnCancelar");
@@ -88,7 +88,6 @@ form.onsubmit = async function (e) {
   }
 };
 
-// problema é aqui
 
 async function listarUsuarios() {
   try {
@@ -130,6 +129,10 @@ async function listarUsuarios() {
                 excluirDescription.textContent = "Essa ação não pode ser desfeita";
                 Excluir.classList.add("active");
 
+                cancelarApagar.onclick = () => {
+                  Excluir.classList.remove("active");
+                };
+                
                 apagar.addEventListener('click', async () => {
                   await fetch(`${API_URL}/${u.id}`, { method: "DELETE" });
                   listarUsuarios();
@@ -137,6 +140,20 @@ async function listarUsuarios() {
                   Excluir.classList.remove("active");
                 });
               };
+                
+                card.querySelector(".postBtnEditar").onclick = () => {
+                  titulo.textContent = "Editar postagem";
+                  description.textContent = "Altere os dados no formulario para editar a postagem"
+                  criar.classList.add("active");
+                  editId = u.id;
+                  nome.value = u.nomePost;
+                  title.value = u.tituloPost;
+                  categoria.value = u.categoria;
+                  url.value = u.UrlImagem;
+                  assunto.value = u.assuntoPost;
+
+                };
+
             });
   } catch (err) {
     console.error(err);
