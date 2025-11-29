@@ -7,6 +7,7 @@ const dia = date.getDate();
 const mes = date.getMonth();
 const ano = date.getFullYear();
 const hora = date.getHours();
+const minuto = date.getMinutes();
 
 
 const months = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
@@ -30,14 +31,14 @@ const excluirDescription = document.getElementById("descriptionExcluir");
 const card = document.createElement("div");
 const nada = document.getElementById("nada");
 
-const container = document.getElementById("postsContainer");
+const container = document.getElementById("posts");
 
 let usuarios = [];
 let IDpost = 0;
 let editId = null;
 
 
-// problema é aqui
+
 
 async function listarUsuarios(filter = "") {
   try {
@@ -52,10 +53,11 @@ async function listarUsuarios(filter = "") {
     );
 
       if (filtrados.length === 0) {
-          nada.style.display = "block";
+          nada.style.display = "flex";
           return;
     }
     nada.style.display = "none";
+    container.innerHTML = "";
     usuarios.forEach((u) => {
       const card = document.createElement("div");
       card.classList.add("postCard");
@@ -76,26 +78,10 @@ async function listarUsuarios(filter = "") {
                     <img src="../../assets/contato1.png" alt="" class="postAutorIcon">
                     <p class="postAuthorText">${u.nomePost}</p>
                 </div>
-                <div class="postButtons">   
-                    <button class="postBtnEditar"> <img src="../../assets/lápis.png" alt="" class="imagEditar"> Editar</button>
-                 
-                    <button class="postBtnExcluir"> <img src="../../assets/lápis.png" alt="" class="imagExcluir"> Excluir</button> 
-                </div>`
+               `
                 container.appendChild(card);
                 console.log("teste");
 
-                card.querySelector(".postBtnExcluir").onclick = async () => {
-                excluirTitulo.textContent = "Excluir postagem";
-                excluirDescription.textContent = "Essa ação não pode ser desfeita";
-                Excluir.classList.add("active");
-
-                apagar.addEventListener('click', async () => {
-                  await fetch(`${API_URL}/${u.id}`, { method: "DELETE" });
-                  listarUsuarios();
-                  console.log("deletado");
-                  Excluir.classList.remove("active");
-                });
-              };
             });
   } catch (err) {
     console.error(err);
