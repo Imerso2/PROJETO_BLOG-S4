@@ -7,7 +7,7 @@ const dia = date.getDate();
 const mes = date.getMonth();
 const ano = date.getFullYear();
 const hora = date.getHours();
-
+const minutos = date.getMinutes();
 
 const months = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
 const monthString = months[mes];
@@ -62,7 +62,8 @@ form.onsubmit = async function (e) {
     categoria: categoria.value.trim(),
     assuntoPost: assunto.value,
     UrlImagem: url.value.trim(),
-    dataPost: `${dia} ${monthString} ${ano}`
+    dataPost: `${dia} ${monthString} ${ano}`,
+    Date: date
 
   };
    try {
@@ -161,5 +162,4 @@ async function listarArtigos() {
     console.error(err);
   }
 }
-     
 listarArtigos();
