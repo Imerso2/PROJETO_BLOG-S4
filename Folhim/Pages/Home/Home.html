@@ -13,9 +13,9 @@
                 <div class="alterPage">
 
                     <div class="entrarLink">
-                        <a href="../../Pages/Auth/Register.html" class="alterButtons" role="button">
-                            <img class="imgHome" src="../../assets/headerUser.png" alt="">Sobre
-                        </a>
+                        <button type="button" class="alterButtons" id="Cadastrar-se">
+                            <img class="imgEntrar" src="../../assets/headerUser.png" alt="">Cadastrar-se
+                        </button>
                     </div>
 
                     <div class="blogsLink">
@@ -23,11 +23,17 @@
                             <img class="imgBlogs" src="../../assets/tecnologia.png" alt="">Publicar
                        </a>
                     </div>
-                </div>
 
-        </header>
-        <!-- estou refasendo tudo por causa de problemas tecnicos, muito erro que eu na~o sei resolver :( -->
-      <main class="mainHome">
+                    <div class="blogsHome">
+                        <a href="../../Pages/Blogs/Blogs.html" class="alterButtons" role="button">
+                            <img class="imgHome" src="../../assets/tecnologia.png" alt="">Sobre
+                       </a>
+                    </div>
+                </div>
+                
+            </header>
+        
+      <div class="mainHome">
         <div class="introductionBox">
             
                 <h1 class="intrudutionTitle">O blog onde você pode encontrar tudo que precisa</h1>
@@ -35,49 +41,71 @@
            
                 
                 <div class="moreButtons">
-                    <button class="btnAdd">Ver Populares</button>
-                    <button class="bntExplo">Explorar Artigos</button>
+                    <button type="button" class="btnAdd">Ver Populares</button>
+                    <button type="button" class="bntExplo">Explorar Artigos</button>
                 </div>
-        </div>
-       
-      </main>
-      <!-- daqui pra baixo é territorio desconhecido, não foi eu, o
-        autor principal quem escreveu o codigo abaixo CUIDADO-->
-      <div class="container"> 
-    <section class="destaque">
-        <span class="tag-top">FOLHIM</span>
-        
-        <div><h1>Em destaque</h1></div>
-        
-        <div class="card-destaque">
-            <img src="../../assets/THE EIght.png" alt="" class="destaqueImg">
-            
-            <div class="info">
-                <span class="tag">TECNOLOGIA</span>
-                <div class="meta">
-                    <span> 16, Fev</span>
-                    <img src="../../assets/calendário1.png" alt="" class="calendarioIcon">
-                    <span>•</span>
-                    <img src="../../assets/cronômetro.png" alt="" class="cronometroIcon">
-                    <span> Editado há 12 minutos</span>
-                </div>
-                <button class="irArtigo">
-                    <h2 >O poder da inteligência artificial na análise de dados em grandes bases.</h2>
-                </button>
             </div>
+            
         </div>
-    </section>
-
-     <!-- Sinceramente viu-->    
-
-         <aside class="populares">
-            <h3>Mais populares</h3>
+        
+        <span class="tag-top">FOLHIM</span>
+        <div class="container"> 
+            <section class="destaque">
+                
+                <div>
+                    <h1>Em destaque</h1>
+                </div>
+                
+                <div class="card-destaque">
+                    <img src="../../assets/THE EIght.png" alt="" class="destaqueImg">
+                    
+                    <div class="info">
+                        <span class="tag">TECNOLOGIA</span>
+                        <div class="meta">
+                            <span> 16, Fev</span>
+                            <img src="../../assets/calendário1.png" alt="" class="calendarioIcon">
+                            <span>•</span>
+                            <img src="../../assets/cronômetro.png" alt="" class="cronometroIcon">
+                            <span> Editado há 12 minutos</span>
+                        </div>
+                        <button  type="button" class="irArtigo"  onclick="location.href='BlogPage.html'">
+                            <h2 >O poder da inteligência artificial na análise de dados em grandes bases.</h2>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sinceramente viu-->    
+            
+            <aside class="populares">
+                <h3 class="popularesText">Mais populares</h3>
+                
+                <div class="popular-item">
+                    <img src="../../assets/THE EIght.png" alt="image">
+                    <div>
+                        <p class="tag">TECNOLOGIA</p>
+                    <button type="button"  class="irArtigo" onclick="location.href='BlogPage.html'">
+                        <h4 class="tituloLateral">Você fica inseguro(a) na hora de escrever?</h4>
+                    </button>
+                    <span class="meta">13, Jul • Editado há 12 minutos</span>
+                </div>
+            </div>
 
             <div class="popular-item">
-                <img src="../../assets/THE EIght.png" alt="kdw">
-                <div>
-                    <span class="tag">TECNOLOGIA</span>
-                    <button class="irArtigo">
+                    <img src="../../assets/THE EIght.png" alt="image">
+                    <div>
+                        <p class="tag">TECNOLOGIA</p>
+                    <button type="button"  class="irArtigo">
+                        <h4 class="tituloLateral">Você fica inseguro(a) na hora de escrever?</h4>
+                    </button>
+                    <span class="meta">13, Jul • Editado há 12 minutos</span>
+                </div>
+            </div>
+            <div class="popular-item">
+                    <img src="../../assets/THE EIght.png" alt="image">
+                    <div>
+                        <p class="tag">TECNOLOGIA</p>
+                    <button type="button"  class="irArtigo">
                         <h4 class="tituloLateral">Você fica inseguro(a) na hora de escrever?</h4>
                     </button>
                     <span class="meta">13, Jul • Editado há 12 minutos</span>
@@ -86,7 +114,7 @@
 
         </aside> 
     </div>
-<!-- termina aqui o territorio desconhecido-->
+
     
 
         <div class="homeHeader">
@@ -96,18 +124,9 @@
                 <img src="../../assets/Lupa.png" alt="lupa" class="lupa">
             </div>
         </div>
-        <div class="postsContainerlist" id="posts">
-
-            <!--Tem que colocar os posts né. já é meia noite e eu aqui-->
-
-                
+        <div class="postsContainer" id="posts"> 
             </div>
-        <div class="nada" id="nada">
-          <i class="nada text"></i>
-          <h3>Nenhum post encontrado</h3>
-          <p>Clique em "Novo Usuário" para começar.</p>
-        </div>
-
+       
     </div>
 
     <footer>
@@ -118,9 +137,13 @@
                 <p class="footerDescription">Encontre e publique artigos a seu bel prazer</p>
             </div>
             <div class="menu">
-                <p class="DepoisMuda" >Menu</p>
-                <a href="../../Pages/Home/Sobre.html" class="footerLink"> <img class="iconSobre" src="../../assets/headerUser.png" alt=""> Sobre</a>
-                <a href="../../Pages/Blogs/Blogs.html" class="footerLink"> <img class="iconPublicar" src="../../assets/tecnologia.png" alt=""> Publicar</a>
+                <p class="menuText" >Menu</p>
+                <div>
+                    <a href="../../Pages/Home/Sobre.html" class="footerLink"> <img class="iconSobre" src="../../assets/headerUser.png" alt=""> Sobre</a>
+                </div>
+                <div>
+                    <a href="../../Pages/Blogs/Blogs.html" class="footerLink"> <img class="iconPublicar" src="../../assets/tecnologia.png" alt=""> Publicar</a>
+                </div>
                 
             </div>
             <p class="footerCopy">© 2025 Folhim Blog. Todos os direitos reservados.</p>

@@ -23,9 +23,10 @@
 
 :root{
     --primary-purple: #7063F0;
-    --primary-purple-light: rgba(102, 102, 238, 0.85);
+    --primary-purple-light: rgba(183, 183, 255, 0.85);
     --primary-color-blur: #9995a6a2;
     --primary-purple-black: #39194e;
+    --secondary-purple-black: #522470;
 
     --red: #F06368;
 
@@ -38,8 +39,10 @@
     --white-gray: #bdbdbd;
 
     --dark-blue: #0d003a;
+    --secondary-dark-blue: #3412ac;
     --orange: #eb8500;
     --vine: #570000;
+    
     --vine-glass: #c21212;
    
     

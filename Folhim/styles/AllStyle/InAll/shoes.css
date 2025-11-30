@@ -1,19 +1,19 @@
 @import url("../../Global.css");
 
 .footerMain{
+    background-image: linear-gradient(to top, var(--primary-purple-black) 60%, var(--transition, rgba(255,255,255,0.15)), var(--white));
     background-color: var(--primary-purple-black);
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    height: 166px;
+    margin-top: 5%;
+    justify-content: space-between;
     align-items: center;
-    
-
 }
 .footerText{
     color: var(--white);
     text-align: center;
-    margin-top: 1%;
+    
     width: 40%;
 }
 .footerTitle{
@@ -28,37 +28,42 @@
     font-size: 16px;
 }
 
-.DepoisMuda{
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    margin-bottom: 8px;
-    display: block;  
+
+.footerLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     text-decoration: none;
+    margin-left: auto;
     color: var(--white);
-
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 5px;
 }
 
-.footerLink, .footerLink {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    margin-bottom: 8px;
-    display: block;  
-    text-decoration: none;
-    color: var(--orange);
-   
+.menu{
+    margin-right: 15%;
+    text-align: left;
+    margin-top: 3%;
+    display: block;
 }
-
 .iconSobre, .iconPublicar{
     height: 15px;
     width: 15px;  
-    
 }
 
+.menuText{
+    font-size: 20px;
+    font-weight: bold;
+    display: block;  
+    text-decoration: none;
+    color: var(--white);
+    
+}
 .footerCopy{
-    text-align: center;  
-    margin-top: 20px;     
+    text-align: center;
+    margin: 1%;    
     width: 100%;     
     color: var(--white);     
 }

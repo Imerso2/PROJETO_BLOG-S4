@@ -36,6 +36,7 @@ let usuarios = [];
 let IDpost = 0;
 let editId = null;
 
+
 btnAdicionar.addEventListener('click', () =>{
     
     titulo.textContent = "Criar postagem";
@@ -55,7 +56,6 @@ btnCancelar.addEventListener('click', ()=>{
 
 form.onsubmit = async function (e) {
   e.preventDefault();
-
   let usuario = {
     nomePost: nome.value,
     tituloPost: title.value,
@@ -63,6 +63,7 @@ form.onsubmit = async function (e) {
     assuntoPost: assunto.value,
     UrlImagem: url.value.trim(),
     dataPost: `${dia} ${monthString} ${ano}`
+
   };
    try {
     if (editId) {
@@ -97,6 +98,7 @@ async function listarArtigos() {
     container.innerHTML = "";
 
     usuarios.forEach((u) => {
+    
       const card = document.createElement("div");
       card.classList.add("postCard");
     

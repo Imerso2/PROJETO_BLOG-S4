@@ -73,27 +73,39 @@
     border-radius: 30px;
     cursor: pointer;
 }
+.btnAdd:hover{
+    height: 38px;
+    width: 12.2%;
+    transition: 500ms;
+    background-color: var(--secondary-dark-blue);
+}
+.bntExplo:hover{
+    height: 38px;
+    width: 12.2%;
+    transition: 500ms;
+    background-color: var(--vine-glass);
+}
 
-/* daqui pra baixo é territorio desconhecido, não foi eu, o
-autor principal quem escreveu o codigo abaixo CUIDADO*/
 .container {
-    width: 90%;
+    width: 80%;
     max-width: 1250px;
     margin: auto;
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 60px;
+    gap: 40px;
+    align-items: baseline;
 
 }
-
 .tag-top {
     font-size: 12px;
     letter-spacing: 1px;
     color: #7b5cff;
+    margin-left: 10%;
+    
 }
 
 .destaque h1 {
-    margin-top: 8px;
+    
     margin-bottom: 25px;
     font-size: 32px;
 }
@@ -119,7 +131,7 @@ autor principal quem escreveu o codigo abaixo CUIDADO*/
     color: #9078fa;
     font-size: 12px;
     font-weight: bold;
-    text-align: center;
+    text-align: left;
 }
 .card-destaque h2 {
     margin-top: 14px;
@@ -133,6 +145,7 @@ autor principal quem escreveu o codigo abaixo CUIDADO*/
     text-align: left;
     padding: 0;
     margin: 0;
+   
 }
 .irArtigo:hover{
     transition: 500ms;
@@ -149,11 +162,14 @@ autor principal quem escreveu o codigo abaixo CUIDADO*/
     text-align: center;
 }
 .populares{
-    margin: 45px;
+    padding-top:35px ;
 }
-.populares h3 {
+.popularesText {
     font-size: 22px;
     margin-bottom: 25px;
+}
+.destaquesText{
+    width: 100%;
 }
 .popular-item {
     align-items: center;
@@ -175,11 +191,12 @@ autor principal quem escreveu o codigo abaixo CUIDADO*/
     font-weight: 600;
 }
 
-/* acaba aqui, o que esta (°°) abaixo é normal
-                          /\
-                          ||*/
+/*(°°)
+   /\
+   ||
+*/
 
-.postsContainerHome{
+.postsContainer{
     margin-left: 10%;   /*  antes era 15% */
     margin-right: 10%;  /*  antes era 15% */
     display: flex;
@@ -190,11 +207,19 @@ autor principal quem escreveu o codigo abaixo CUIDADO*/
     margin-bottom: 20px;
     height: 350px;
     width: 30%;
+
 }
 .searchBox{
     justify-content: right;
     display: flex;
-    border: 1px solid var(--primary-purple-light);
+    border: 2px solid var(--primary-purple-light);
+    border-radius: 6px;
+}
+.searchBox:hover{
+   
+    transition: 500ms;
+    border: 2px solid var(--primary-purple-black);
+
 }
 .searchInp{
     border: none;
@@ -203,10 +228,13 @@ autor principal quem escreveu o codigo abaixo CUIDADO*/
     height: 20px;
     width: 200px;
 }
+
 .lupa{ 
     background-color: var(--primary-purple);
     height: 20px;
     width: 20px;
+    padding: 1px;
+    border-radius: 4px;
 }
 .homeTitle{
     font-size: 24px;
@@ -246,6 +274,12 @@ img {
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+.top:hover{
+    transition: 500ms;
+    height: 33px;
+    width: 33px;
+}
+
 .topImg{
     height: 100%;
     width: 100%;
@@ -262,6 +296,3 @@ img {
 .nada.nada{
     display: flex;
 }
-
-/* era pra ser o footer né */
-
