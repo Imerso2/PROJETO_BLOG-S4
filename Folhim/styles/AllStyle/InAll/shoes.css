@@ -1,8 +1,23 @@
 @import url("../../Global.css");
 
+
+:root{
+    --texto: #000000;
+    --principal: #263b54;
+    --principal-clara: #3c526d;
+   
+    --secundaria: #6d0000; 
+    --secundaria2: #990404;
+    --secundaria-text: #ac4200;
+    --branco2: #cbd5dc; 
+    --branco: #ffffff;
+    --principal-clarinho: #4975ab;
+
+}
+
 .footerMain{
-    background-image: linear-gradient(to top, var(--primary-purple-black) 60%, var(--transition, rgba(255,255,255,0.15)), var(--white));
-    background-color: var(--primary-purple-black);
+    background-image: linear-gradient(to top, var(--principal) 60%, var(--principal, rgba(255,255,255,0.15)), var(--branco));
+    background-color: var(--principal);
     display: flex;
     flex-wrap: wrap;
     width: 100%;
@@ -11,19 +26,19 @@
     align-items: center;
 }
 .footerText{
-    color: var(--white);
+    color: var(--branco2);
     text-align: center;
     
     width: 40%;
 }
 .footerTitle{
-    color: var(--white);
+    color: var(--texto);
     font-weight: bold;
     margin-left: 15%;
     font-size: 24px;
 }
 .footerDescription{
-    color: var(--white);
+    color: var(--branco2);
     margin-left: 15%;
     font-size: 16px;
 }
@@ -35,7 +50,7 @@
     gap: 8px;
     text-decoration: none;
     margin-left: auto;
-    color: var(--white);
+    color: var(--branco2);
     border: none;
     cursor: pointer;
     text-align: center;
@@ -58,12 +73,12 @@
     font-weight: bold;
     display: block;  
     text-decoration: none;
-    color: var(--white);
+    color: var(--texto);
     
 }
 .footerCopy{
     text-align: center;
     margin: 1%;    
     width: 100%;     
-    color: var(--white);     
+    color: var(--branco2);     
 }
