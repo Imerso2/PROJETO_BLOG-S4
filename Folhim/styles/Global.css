@@ -32,10 +32,9 @@
 
     --red: #6a040f; /*(#6a040f): Home: naada; Pages: nada; Blog: botao do "cancelar (visto de primeira)" */
 
-    --gray: #000000; /*(#000000): home: nada; pages: nome "bem vindo(letras)"; blog: nome "bem vindo(letras), letra do nome "minhas publicações" e palavras da caixa de criação de novo post*/
+    --gray: #eb8500; /*(#000000): home: nada; pages: nome "bem vindo(letras)"; blog: nome "bem vindo(letras), letra do nome "minhas publicações" e palavras da caixa de criação de novo post*/
     --dark-gray:#0dea66; /*(#db07074e): home: nada; pages: nada; blog: */
-    --black: #000000;
-
+    --black: #000000; 
     --white: #ffffff; /*botoes da caixa (criar postagem), botao do blog (novo post (letra)), fundo abaixo do header do blogpages, degrader e letras maiores do home*/
     --white-back: #370617; /*a caixa */
     --white-gray: #ffffff;
