@@ -3,11 +3,10 @@ const API_URL = "http://localhost:3000/userPost";
 
 //dataaaaaaaaa
 const date = new Date();
+const agora = Date.now()
 const dia = date.getDate();
 const mes = date.getMonth();
 const ano = date.getFullYear();
-const hora = date.getHours();
-const minutos = date.getMinutes();
 
 const months = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
 const monthString = months[mes];
@@ -63,7 +62,7 @@ form.onsubmit = async function (e) {
     assuntoPost: assunto.value,
     UrlImagem: url.value.trim(),
     dataPost: `${dia} ${monthString} ${ano}`,
-    Date: date
+    Date: agora
 
   };
    try {

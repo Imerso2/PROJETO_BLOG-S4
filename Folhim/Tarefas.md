@@ -42,3 +42,11 @@ footer
 o footer vai ter no Blog então é tranquilo só adicionar mais algumas coisinhas
 
 
+function atualizarTempos() {
+    const elementos = document.querySelectorAll("#editadoAh");
+    console.log(elementos)
+    elementos.forEach(el => {
+        const timestamp = el.dataPost
+        el.textContent = tempoDesde(timestamp);
+    });
+}

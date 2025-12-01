@@ -3,9 +3,8 @@ const API_URL = "http://localhost:3000/userPost";
 
 
 const date = new Date();
-const hora = date.getHours();
-const minuto = date.getMinutes();
 let usuarios = [];
+let times;
 
 const card = document.createElement("div");
 const container = document.getElementById("posts");
@@ -67,13 +66,10 @@ async function listarArtigos(filter = "") {
                     <p class="postDateText">${u.dataPost}</p>
                     <p> • </p>
                     <img src="../../assets/cronômetro.png" alt="" class="postAutorIcon">
-                    <p class="postAuthorText" id="editadoAh"></p>
+                    <p class="postAuthorText" id="editadoAh">${tempoDesde(u.Date)}</p>
                 </div>
         `
                 container.appendChild(card);
-                console.log("teste");
-                tempoDesde(u.Date);
-
             });
             
   } catch (err) {
@@ -113,11 +109,11 @@ async function listarPopular() {
                     <div class="info">
                         <span class="tag">${u.categoria}</span>
                         <div class="meta">
+                        <img src="../../assets/calendário1.png" alt="" class="calendarioIcon">
                           <span>${u.dataPost}</span>
-                            <img src="../../assets/calendário1.png" alt="" class="calendarioIcon">
                             <span>•</span>
                             <img src="../../assets/cronômetro.png" alt="" class="cronometroIcon">
-                            <span id="editadoAh"> Editado há 12 minutos</span>
+                            <span id="editadoAh"> Editado há tem que fazer a funcção</span>
                         </div>
                         <button  type="button" class="irArtigo"  onclick="location.href='BlogPage.html'">
                             <h2 >O poder da inteligência artificial na análise de dados em grandes bases.</h2>
@@ -127,7 +123,7 @@ async function listarPopular() {
 
                 container.appendChild(card);
                 console.log("teste");
-                tempoDesde(u.Date);
+                
 
             });
             
@@ -136,29 +132,30 @@ async function listarPopular() {
   }
 }
 
-let time = "";
 function tempoDesde(times) {
 
     const agora = Date.now();
-    const diferenca = agora - Number(time);
-
-    if (diferenca < 0) time = "editado agora";
-
-    const segundos = Math.floor(diferenca / 1000); // isso flaz sentido? dividido por mil... 
-    if (segundos < 60) time = `editado há ${segundos} segundos`;
+   
+    const diferenca = agora - Number(times);
+    
+    if (diferenca < 0) return "editado agora";
+    
+    const segundos = Math.floor(diferenca / 1000);
+    if (segundos < 60) return `editado há ${segundos} segundos`;
 
     const minutos = Math.floor(segundos / 60);
-    if (minutos < 60) time = `editado há ${minutos} minutos`;
+    if (minutos < 60) return `editado há ${minutos} minutos`;
 
     const horas = Math.floor(minutos / 60);
-    if (horas < 24) time = `editado há ${horas} horas`;
+    if (horas < 24) return `editado há ${horas} horas`;
 
     const dias = Math.floor(horas / 24);
-    time = `editado há ${dias} dias`;
+    return `editado há ${dias} dias`;
 }
 
 
 // chamada de função
 listarArtigos();
+
 
 
