@@ -1,5 +1,18 @@
 @import url("../../Global.css");
 
+:root{
+    --texto: #000000;
+    --principal: #263b54;
+    --principal-clara: #5880af;
+   
+    --secundaria: #6d0000; 
+    --secundaria2: #990404;
+    --secundaria-text: #d75403;
+    --branco2: #cbd5dc; 
+    --branco: #ffffff;
+    --principal-clarinho: #4975ab;
+
+}
 
 /*Rato AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA*/
 /*pra la ana ratinha vea*/
@@ -23,7 +36,7 @@
     align-items: center;
     gap: 8px;
     padding: 16px;
-    color: var(--orange);
+    color: var(--branco2);
     border: none;
     cursor: pointer;
     text-align: center;
@@ -39,15 +52,15 @@
     width: 100%;
     height: 500px;
     text-align: center;
-    background-image: linear-gradient(to bottom, var(--primary-purple-black) 60%, var(--transition, rgba(255,255,255,0.15)), var(--white));
-    background-color: var(--primary-purple-black);
+    background-image: linear-gradient(to bottom, var(--principal) 60%, var(--transition, var(--branco)), var(--branco));
+    background-color: var(--principal);
 }
 .intrudutionTitle{  
-     color: var(--white);
+     color: var(--branco2);
      margin-top: 8%;
 }
 .intrudutionText{
-    color: var(--white);
+    color: var(--branco2);
 }
 .moreButtons{
     text-align: center;
@@ -55,9 +68,9 @@
     
 }
 .btnAdd{
-    background-color: var(--dark-blue);
-    color: var(--orange);
-    border: var(--primary-purple-black);
+    background-color: var(--secundaria);
+    color: var(--branco);
+    border: var(--secundaria);
     height: 35px;
     width: 12%;
     border-radius: 30px;
@@ -65,9 +78,9 @@
 }
 
 .bntExplo{
-    background-color: var(--vine);
-    color: var(--orange);
-    border: var(--vine-glass);
+    background-color: var(--secundaria);
+    color: var(--branco);
+    border: var(--secundaria);
     height: 35px;
     width: 12%;
     border-radius: 30px;
@@ -77,13 +90,13 @@
     height: 38px;
     width: 12.2%;
     transition: 500ms;
-    background-color: var(--secondary-dark-blue);
+    background-color: var(--secundaria2);
 }
 .bntExplo:hover{
     height: 38px;
     width: 12.2%;
     transition: 500ms;
-    background-color: var(--vine-glass);
+    background-color: var(--secundaria2);
 }
 
 .container {
@@ -99,7 +112,7 @@
 .tag-top {
     font-size: 12px;
     letter-spacing: 1px;
-    color: #7b5cff;
+    color: var(--principal-clarinho);
     margin-left: 10%;
     
 }
@@ -118,7 +131,7 @@
     gap: 15px;
 }
 .card-destaque {
-    background: #fff;
+    background: var(--branco);
     margin-bottom: 5%;
 }
 .destaqueImg{
@@ -128,7 +141,7 @@
     border-radius: 8px;
 }   
 .tag {
-    color: #9078fa;
+    color: var(--principal-clarinho);
     font-size: 12px;
     font-weight: bold;
     text-align: left;
@@ -149,7 +162,7 @@
 }
 .irArtigo:hover{
     transition: 500ms;
-    color: var(--primary-purple);
+    color: var(--principal-clara);
     text-decoration: underline;
 }
 .meta {
@@ -157,7 +170,7 @@
     gap: 8px;
     margin-left: auto;
     font-size: 13px;
-    color: #666;
+    color: var(--principal-clarinho);
     align-items: center;
     text-align: center;
 }
@@ -177,7 +190,7 @@
     gap: 15px;
     margin-bottom: 25px;
     padding-bottom: 20px;
-    border-bottom: 2px solid #9078fa;
+    border-bottom: 2px solid var(--principal);
 }
 .popular-item img {
     width: 80px;
@@ -191,7 +204,7 @@
     font-weight: 600;
 }
 
-/*(°°)
+/*(°°) cada coisa viu. Ass: Ana Clara
    /\
    ||
 */
@@ -214,13 +227,13 @@
 .searchBox{
     justify-content: right;
     display: flex;
-    border: 2px solid var(--primary-purple-light);
+    border: 2px solid var(--principal);
     border-radius: 6px;
 }
 .searchBox:hover{
    
     transition: 500ms;
-    border: 2px solid var(--primary-purple-black);
+    border: 2px solid var(--principal-clara);
 
 }
 .searchInp{
@@ -232,7 +245,7 @@
 }
 
 .lupa{ 
-    background-color: var(--primary-purple);
+    background-color: var(--branco2);
     height: 20px;
     width: 20px;
     padding: 1px;
@@ -241,7 +254,7 @@
 .homeTitle{
     font-size: 24px;
     font-weight: bold;
-    color: var(--black);
+    color: var(--secundaria);
 }
 .homeHeader{
     display: flex;
@@ -269,12 +282,12 @@ img {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: var(--primary-purple);
+    background-color: var(--secundaria);
     border: none;
     border-radius: 50%;
     padding: 10px;
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px var(--secundaria2);
 }
 .top:hover{
     transition: 500ms;
@@ -291,7 +304,7 @@ img {
     text-align: center;
     align-items: center;
     margin-top: 50px;
-    color: var(--gray);
+    color: var(--secundaria);
     font-size: 18px;
 
 }
