@@ -18,6 +18,26 @@ searchInput.addEventListener("input", (e) => {
   listarArtigos(filter);
 });
 
+// chamar tudooo e pegar os fetch da API
+async function faztudo() {
+   try {
+    const res = await fetch(API_URL); 
+    usuarios = await res.json();
+    let a;
+    usuarios.for(a = 0; index < array.length; index++){)
+      const populares = array[index];
+      listarPopulares();
+    }
+    listarArtigos();
+    listarPopular(usuarios[0]);
+    
+
+   }
+   catch(err){
+    console.log(err)
+   }
+  
+}
 // listar os artigos
 async function listarArtigos(filter = "") {
   try {
@@ -25,8 +45,7 @@ async function listarArtigos(filter = "") {
     usuarios = await res.json();
 
     // filtro :)
-    const filtrados = usuarios.filter(
-      (u) =>
+    const filtrados = usuarios.filter((u) =>
         u.categoria.toLowerCase().includes(filter) ||
         u.tituloPost.toLowerCase().includes(filter)
     );

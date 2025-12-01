@@ -196,12 +196,14 @@
    ||
 */
 
-.postsContainer{
+.postsContainerHome{
     margin-left: 10%;   /*  antes era 15% */
     margin-right: 10%;  /*  antes era 15% */
     display: flex;
     flex-wrap: wrap;
     gap: 2%;
+    padding: 10px;
+    border: 1px dashed var(--principal);
 }
 .postCardHome{ 
     margin-bottom: 20px;

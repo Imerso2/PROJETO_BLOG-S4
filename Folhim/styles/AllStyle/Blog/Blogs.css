@@ -1,54 +1,71 @@
 @import url("../../Global.css");
+:root{
+    --texto: #000000; /*(#370617): home: botao de voltar pra cima, frase grande e lupa; blogPages: titulo, botao de voltar; blog: titulo, botao com seta, botao (novo post(dentro) e botao de criar postagem (salvar(dentro))*/
+    --principal: #263b54; /*(#d00000): home: linha em baixo de "artigo", linha da barra de "pesquisa artigo"; Pages: linha do header e fundo de tecnologia; Blog: todas as linhas que tiver*/
+    --principal-clara: #3c526d; /*(#d00000): home: linha em baixo de "artigo", linha da barra de "pesquisa artigo"; Pages: linha do header e fundo de tecnologia; Blog: todas as linhas que tiver*/
+    --secundaria: #6d0000; /*(#9995a6a2): Home: nada; Pages: nada; Blog: fundo da caixa de criar postagem*/
+    --branco2: #cbd5dc; /*(#370617): Home: fundo do começo e fim, 2 linha da barra de "pesquisar artigos"; Pages: nada; Blog: quando passa a seta em cima de salvar*/
+    --branco: #ffffff; /*(#9d0208): Home: nada; Pages: nada; Blog: nada (acho que não tem em nenhum ou so estou cega de sono mesmo)*/
 
+}
 .headerMain{
-    border-bottom: 1px solid var(--primary-purple-light);
+    border-bottom: 1px solid var(--principal-clara);
 }
 .mainContent{
     width: 70%;
     margin: 3% auto;
     align-items: center;
     text-align: center;
+
 }
 .mainHeader{
     display: flex;
     align-items: center;
     text-align: center;
+    margin-bottom: 4%;
 }
 .mainTitle{
     font-size: 24px;
 	font-weight: bold;
-	color: var(--gray);
+	color: var(--texto);
 }
 .mainBtnAdicionar{
     display: inline-flex;
     align-items: center;
     gap: 8px;
     height: 50px;
-    padding: 16px;
+    padding: 10px;
     margin-left: auto;
-    background-color: var(--primary-purple);
-    color: var(--white);
+    background-color: var(--principal-clara);
+    color: var(--branco);
     border: none;
     border-radius: 12px;
     cursor: pointer;
     text-align: center;
     margin-bottom: 10px;
-    border: 2px solid var(--primary-purple-light);
+    border: 2px solid var(--principal-clara);
 
 }
+.mainBtnAdicionar:hover{
+    padding: 12px;
+    transition: 500ms;
+    background-color: var(--principal);
+}
 .postsContainer{
-    border: 1px dashed var(--primary-purple-light);
+    padding: 10px;
+    border: 1px dashed var(--principal);
     border-radius: 5px;
     display: flex;
     flex-wrap: wrap;
-    gap: 2%;
+    gap: 3%;
     
 }
 .postCard{
     margin-bottom: 20px;
-    width: 32%;
+    width: 30%;
     display: flex;
     flex-direction: column;
+    border: 1px solid var(--secundaria-text);
 }
 .content{
     display: flex;
@@ -68,8 +85,6 @@
     object-fit: cover;   /* mantém proporção, corta corretamente */
     border-radius: 4px;
     margin-bottom: 5px;
-
-
 }
 .postText{
     text-align: left;
@@ -129,8 +144,8 @@
 }
 
 .postBtnEditar{
-    color: var(--white);
-    background-color: var(--primary-purple);
+    color: var(--);
+    background-color: var(--secundaria);
     border: none;
     cursor: pointer;
     width: 160px;

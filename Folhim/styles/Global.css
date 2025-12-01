@@ -24,29 +24,17 @@
 /*huuuuuum que tipo de cor?*/
 
 :root{
-    --primary-purple: #370617; /*(#370617): home: botao de voltar pra cima, frase grande e lupa; blogPages: titulo, botao de voltar; blog: titulo, botao com seta, botao (novo post(dentro) e botao de criar postagem (salvar(dentro))*/
-    --primary-purple-light: #d00000; /*(#d00000): home: linha em baixo de "artigo", linha da barra de "pesquisa artigo"; Pages: linha do header e fundo de tecnologia; Blog: todas as linhas que tiver*/
-    --primary-color-blur: #9995a6a2; /*(#9995a6a2): Home: nada; Pages: nada; Blog: fundo da caixa de criar postagem*/
-    --primary-purple-black: #370617; /*(#370617): Home: fundo do começo e fim, 2 linha da barra de "pesquisar artigos"; Pages: nada; Blog: quando passa a seta em cima de salvar*/
-    --secondary-purple-black: #9d0208; /*(#9d0208): Home: nada; Pages: nada; Blog: nada (acho que não tem em nenhum ou so estou cega de sono mesmo)*/
-
-    --red: #6a040f; /*(#6a040f): Home: naada; Pages: nada; Blog: botao do "cancelar (visto de primeira)" */
-
-    --gray: #eb8500; /*(#000000): home: nada; pages: nome "bem vindo(letras)"; blog: nome "bem vindo(letras), letra do nome "minhas publicações" e palavras da caixa de criação de novo post*/
-    --dark-gray:#0dea66; /*(#db07074e): home: nada; pages: nada; blog: */
-    --black: #000000; 
-    --white: #ffffff; /*botoes da caixa (criar postagem), botao do blog (novo post (letra)), fundo abaixo do header do blogpages, degrader e letras maiores do home*/
-    --white-back: #370617; /*a caixa */
-    --white-gray: #ffffff;
-
-    --dark-blue: #6a040f; /*show*/
-    --secondary-dark-blue: #d00000;
-    --orange: #eb8500;
-    --vine: #570000;
-    
-    --vine-glass: #d00000;
+    --texto: #000000;
+    --principal: #263b54;
+    --principal-clara: #3c526d;
    
-    
+    --secundaria: #6d0000; 
+    --secundaria-text: #ac4200;
+    --branco2: #cbd5dc; 
+    --branco: #ffffff;
+    --principal-clarinho: #4975ab;
+
+
 }
 /*
 musicas pra escutar estilizando

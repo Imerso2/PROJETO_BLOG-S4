@@ -1,6 +1,15 @@
 @import url("../../Global.css");
 
-
+:root{
+    --texto: #000000; /*(#370617): home: botao de voltar pra cima, frase grande e lupa; blogPages: titulo, botao de voltar; blog: titulo, botao com seta, botao (novo post(dentro) e botao de criar postagem (salvar(dentro))*/
+    --principal: #263b54; /*(#d00000): home: linha em baixo de "artigo", linha da barra de "pesquisa artigo"; Pages: linha do header e fundo de tecnologia; Blog: todas as linhas que tiver*/
+    --principal-clara: #3c526d; /*(#d00000): home: linha em baixo de "artigo", linha da barra de "pesquisa artigo"; Pages: linha do header e fundo de tecnologia; Blog: todas as linhas que tiver*/
+    --secundaria: #6d0000; /*(#9995a6a2): Home: nada; Pages: nada; Blog: fundo da caixa de criar postagem*/
+    --branco2: #cbd5dc; /*(#370617): Home: fundo do começo e fim, 2 linha da barra de "pesquisar artigos"; Pages: nada; Blog: quando passa a seta em cima de salvar*/
+    --branco: #ffffff; /*(#9d0208): Home: nada; Pages: nada; Blog: nada (acho que não tem em nenhum ou so estou cega de sono mesmo)*/
+     --principal-clarinho: #4975ab;
+     --secundaria-claro:  #b51212;
+}
 .criar{
   display: none; /* genial deixa invisible massa demais */
   position: fixed;
@@ -23,12 +32,13 @@
 
 .criarMain {
 
-  background: var(--white-back);
+  background: var(--branco2);
   max-width: 480px;
   border-radius: 16px;
-  border: 1.5px solid var(--gray);
+  border: 1.5px solid var(--texto);
   overflow: hidden;
-  box-shadow: 0 20px 40px var(--black);
+  box-shadow: 0 20px 40px var(--texto);
+
 }
 
 .criarHeader {
@@ -36,17 +46,18 @@
   display: flex;
   align-items: center;
   
+  
 }
 
 .titleText {
   font-size: 24px;
   font-weight: 600;
-  color: var(--black);
+  color: var(--principal);
   width: 100%;
 } 
 .description{
   font-size: 16px;
-  color: var(--gray);
+  color: var(--texto);
   padding: 5px 24px;
 }
 .descriptionBox{
@@ -65,26 +76,29 @@
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
-  color: var(--gray);
+  color: var(--principal);
   font-size: 16px;
 }
 
 .inputBox input {
   width: 100%;
   padding: 10px;
-  background: var(--white-back);
-  border: 1.5px solid var(--gray);
+  background: var(--principal-clarinho);
+  border: 1.5px solid var(--branco2);
   border-radius: 8px;
-  color: var(--white);
+  color: var(--branco);
   font-size: 16px;
 }
 
 .inputBox input:focus {
   outline: none;
-  border-color: var(--primary-purple);
+  border-color: var(--principal);
   transition: 500ms;
-  background-color: var(--primary-purple-black);
+  background-color: var(--principal);
 
+}
+.inputBox input::placeholder {
+  color: var(--branco);
 }
 
 .criarButtons {
@@ -93,27 +107,8 @@
   text-align: center;
 }
 .btnSalvar{
-    color: var(--white);
-    background-color: var(--primary-purple);
-    border: none;
-    cursor: pointer;
-    border-radius: 12px;
-    cursor: pointer;
-    width: 210px;
-    height: 30px;
-    text-align: center;
-    align-items: center;   
-}
-.btnSalvar:hover{
-    width: 215px;
-    height: 32px;
-    background-color: var(--primary-purple-black);
-    transition: 300ms;
-
-}
-.btnCancelar{
-    color: var(--white);
-    background-color: var(--red);
+    color: var(--branco);  
+    background-color: var(--principal);
     border: none;
     cursor: pointer;
     border-radius: 12px;
@@ -122,17 +117,35 @@
     height: 30px;
     text-align: center;
     align-items: center;
+    
 }
-.btnCancelar:hover{
+.btnSalvar:hover{
     width: 215px;
-    height: 32px;
-    background-color: var(--vine);
+    background-color: var(--principal-clara);
     transition: 300ms;
 
 }
+.btnCancelar{
+    color: var(--branco);
+    background-color: var(--principal);
+    border: none;
+    cursor: pointer;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 210px;
+    height: 30px;
+    text-align: center;
+    align-items: center;
+    
+}
+.btnCancelar:hover{
+    width: 215px;
+    background-color: var(--principal-clara);
+    transition: 300ms;
+}
 .excluir{
     display: none; /* genial deixa invisible massa demais */
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -146,8 +159,13 @@
 .excluir.active {
     display: flex; /* genial deixa visivel agora massa demais */
 }
+.criarExluir{
+  border-radius: 15px;
+  padding: 2%;
+  background-color: var(--branco2);
+}
 .descriptionExcluir{
   font-size: 16px;
-  color: var(--gray);
+  color: var(--texto);
   padding: 5px 24px;
 }
