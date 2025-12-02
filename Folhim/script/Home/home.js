@@ -70,17 +70,19 @@ async function listarArtigos(filter = "") {
       card.classList.add("postCard");
     
       // criando o card
-      card.innerHTML = 
+      card.innerHTML =
       `
       <div class="imgBox">
         <img  src="${u.UrlImagem}"
         class="postImage">
       </div>
                 <div class="postTexts">
+                <button type="button" class="irArtigo"  onclick="location.href='BlogPage.html'">
                     <p class="postTitle">${u.tituloPost}</p>
+                    </button>
                     <p class="postdescription">${u.assuntoPost}</p>
                 </div>
-                <div class="postInfo">
+                <div class="postInfo" id="descer">
                     <img src="../../assets/calendário1.png" alt="" class="postDateIcon">
                     <p class="postDateText">${u.dataPost}</p>
                     <p> • </p>
@@ -138,7 +140,7 @@ async function listarPopular(p) {
       `
 
                 containerTop.appendChild(cardDestaque);
-               postExtendido(p)     
+                   
   } catch (err) {
     console.log(err);
   }
@@ -202,38 +204,49 @@ function tempoDesde(times) {
     const dias = Math.floor(horas / 24);
     return `editado há ${dias} dias`;
 }
-function postExtendido(p){
-  console.log("bosta")
- postExentended.innerHTML =
- ` 
-            <div class="image-area">
-                <img src="${p.UrlImagem}" alt="">
-            </div>
-            
-            <div class="post-card">
-                <span class="categoria">${p.categoria}</span>
-                <h1 class="text">"${p.tituloPost}"</h1>
-                
-                <div class="infor">
-                    <div class="meta">
-                        <img src="../../assets/calendário1.png" alt="" class="calendarioIcon">
-                        <span>${p.dataPost}</span>
-                        <span>•</span>
-                        <img src="../../assets/cronômetro.png" alt="" class="cronometroIcon">
-                        <span>${tempoDesde(p.Date)}</span>
-                    </div>
-                </div>
-            </div>
-            </div>
-                <section class="assuntoText" >
-                    <p>${p.assuntoPost}</p>
-                </section>`
-}
-postExentendedBox.appendChild(postExentended);
 
 // chamada de função
 faztudo();
 
+const btnPopulares = document.getElementById("btnPopulares");
+const btnExplorar = document.getElementById("btnExplorar");
+const btnSubir = document.getElementById("btnSubir");
+const header = document.getElementById("header");
 
-// postes individuais hhahaha
-postExtendido(usuarios[0]);
+// só adiciona o listener se o elemento existir
+if (btnPopulares) {
+  btnPopulares.addEventListener('click', (e) => {
+    e.preventDefault();
+    // tenta encontrar o alvo pelo id primeiro, depois pela variável já obtida
+    const target = document.getElementById("populares") || containerPopulares;
+    if (!target) return;
+    // ajuste offset se tiver header fixo (valor em px)
+    const yOffset = -80;
+    const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  });
+}
+
+if (btnExplorar) {
+  btnExplorar.addEventListener('click', (e) => {
+    e.preventDefault();
+    // preferir rolar para a seção principal de posts
+    const target2 = container
+    if (!target2) return;
+    // ajuste offset se tiver header fixo (valor em px)
+    const yOffset = -80;
+    const y = target2.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  });
+}
+
+
+  btnSubir.addEventListener('click', (e) => {
+    e.preventDefault();
+    const target3 = header || document.getElementById("pHeader");
+    if (!target3) return;
+    // ajuste offset se tiver header fixo (valor em px)
+  
+    const y = target3.getBoundingClientRect().top + window.pageYOffset;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  });
