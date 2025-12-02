@@ -55,7 +55,6 @@
     background-color: var(--principal);
 }
 .postsContainer{
-    padding: 10px;
     border: 1px dashed var(--principal);
     border-radius: 5px;
     display: flex;
@@ -64,7 +63,8 @@
     
 }
 .postCard{
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     width: 30%;
     display: flex;
     flex-direction: column;
