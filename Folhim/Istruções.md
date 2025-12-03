@@ -10,7 +10,7 @@ git config --global user.email "seuemail@example.com"
 ### sempre inicializar antes de testar algo para não gerar problema
 
 ```bash
-npx json-server --watch 'Folhim/server/db.json' --port=3000
+npm run server
 ``` 
 # Se editar algo
 ### sempre lembre de fazer um

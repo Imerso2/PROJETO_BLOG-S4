@@ -36,20 +36,20 @@ let IDpost = 0;
 let editId = null;
 
 
-btnAdicionar.addEventListener('click', () =>{
-    
-    titulo.textContent = "Criar postagem";
-    description.textContent = "Preencha os dados no formulario para criar uma postagem"
-    criar.classList.add("active");
-    editId = null;
-    
+btnAdicionar.addEventListener('click', () => {
+
+  titulo.textContent = "Criar postagem";
+  description.textContent = "Preencha os dados no formulario para criar uma postagem"
+  criar.classList.add("active");
+  editId = null;
+
 });
 
 const btnCancelar = document.getElementById("btnCancelar");
 
-btnCancelar.addEventListener('click', ()=>{
-    form.reset();
-    criar.classList.remove("active");
+btnCancelar.addEventListener('click', () => {
+  form.reset();
+  criar.classList.remove("active");
 
 });
 
@@ -65,7 +65,7 @@ form.onsubmit = async function (e) {
     Date: agora
 
   };
-   try {
+  try {
     if (editId) {
       await fetch(`${API_URL}/${editId}`, {
         method: "PUT",
@@ -83,7 +83,7 @@ form.onsubmit = async function (e) {
     criar.classList.remove("active");
     listarArtigos();
     form.reset();
-    
+
   } catch (err) {
     console.error(err);
   }
@@ -92,16 +92,16 @@ form.onsubmit = async function (e) {
 
 async function listarArtigos() {
   try {
-    const res = await fetch(API_URL); 
+    const res = await fetch(API_URL);
     usuarios = await res.json();
 
     container.innerHTML = "";
 
     usuarios.forEach((u) => {
-    
+
       const card = document.createElement("div");
       card.classList.add("postCard");
-    
+
       card.innerHTML = `
       <div class="imgBox">
         <img  src="${u.UrlImagem}"
@@ -123,40 +123,40 @@ async function listarArtigos() {
                  
                     <button class="postBtnExcluir"> <img src="../../assets/lápis.png" alt="" class="imagExcluir"> Excluir</button> 
                 </div>`
-                container.appendChild(card);
-                console.log("teste");
+      container.appendChild(card);
+      console.log("teste");
 
-                card.querySelector(".postBtnExcluir").onclick = async () => {
-                excluirTitulo.textContent = "Excluir postagem";
-                excluirDescription.textContent = "Essa ação não pode ser desfeita";
-                Excluir.classList.add("active");
+      card.querySelector(".postBtnExcluir").onclick = async () => {
+        excluirTitulo.textContent = "Excluir postagem";
+        excluirDescription.textContent = "Essa ação não pode ser desfeita";
+        Excluir.classList.add("active");
 
-                cancelarApagar.onclick = () => {
-                  Excluir.classList.remove("active");
-                };
-                
-                apagar.addEventListener('click', async () => {
-                  await fetch(`${API_URL}/${u.id}`, { method: "DELETE" });
-                  listarArtigos();
-                  console.log("deletado");
-                  Excluir.classList.remove("active");
-                });
-              };
-                
-                card.querySelector(".postBtnEditar").onclick = () => {
-                  titulo.textContent = "Editar postagem";
-                  description.textContent = "Altere os dados no formulario para editar a postagem"
-                  criar.classList.add("active");
-                  editId = u.id;
-                  nome.value = u.nomePost;
-                  title.value = u.tituloPost;
-                  categoria.value = u.categoria;
-                  url.value = u.UrlImagem;
-                  assunto.value = u.assuntoPost;
+        cancelarApagar.onclick = () => {
+          Excluir.classList.remove("active");
+        };
 
-                };
+        apagar.addEventListener('click', async () => {
+          await fetch(`${API_URL}/${u.id}`, { method: "DELETE" });
+          listarArtigos();
+          console.log("deletado");
+          Excluir.classList.remove("active");
+        });
+      };
 
-            });
+      card.querySelector(".postBtnEditar").onclick = () => {
+        titulo.textContent = "Editar postagem";
+        description.textContent = "Altere os dados no formulario para editar a postagem"
+        criar.classList.add("active");
+        editId = u.id;
+        nome.value = u.nomePost;
+        title.value = u.tituloPost;
+        categoria.value = u.categoria;
+        url.value = u.UrlImagem;
+        assunto.value = u.assuntoPost;
+
+      };
+
+    });
   } catch (err) {
     console.error(err);
   }

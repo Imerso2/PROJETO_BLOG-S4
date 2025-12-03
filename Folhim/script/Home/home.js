@@ -11,88 +11,103 @@ const container = document.getElementById("posts");
 const containerTop = document.getElementById("destaqueContainer");
 const containerPopulares = document.getElementById("populares");
 const searchInput = document.getElementById("searchInput");
-const postExentended = document.getElementById("postExentended");
-const postExentendedBox = document.getElementById("postExentendedBox");
+
 // coletar o filter
-searchInput.addEventListener("input", (e) => {
-  const filter = e.target.value.trim().toLowerCase();
-  container.innerHTML = "";
-  listarArtigos(filter);
-});
+if (searchInput) {
+  searchInput.addEventListener('input', (e) => {
+    const filter = e.target.value.trim().toLowerCase();
+    container.innerHTML = "";
+    listarArtigos(filter);
+  });
+}
 
 // chamar tudooo e pegar os fetch da API
 async function faztudo() {
-   try {
-    const res = await fetch(API_URL); 
+  try {
+    const res = await fetch(API_URL);
     usuarios = await res.json()
-   
+
     listarPopulares(usuarios.slice(1, 4));
-    console.log(usuarios.slice(1,4))
+
     listarArtigos();
     listarPopular(usuarios[0]);
-    
 
-   }
-   catch(err){
+
+  }
+  catch (err) {
     console.log(err)
-   }
-  
+  }
+
 }
 // listar os artigos
 async function listarArtigos(filter = "") {
   try {
-    const res = await fetch(API_URL); 
+    const res = await fetch(API_URL, {
+      mode: 'cors',
+      method: 'GET',
+      headers: {
+        'Content-Type': "application/json"
+      }
+    });
     usuarios = await res.json();
 
     // filtro :)
     const filtrados = usuarios.filter((u) =>
-        u.categoria.toLowerCase().includes(filter) ||
-        u.tituloPost.toLowerCase().includes(filter)
+      u.categoria.toLowerCase().includes(filter) ||
+      u.tituloPost.toLowerCase().includes(filter)
     );
-    
+
     const nada = document.createElement("div");
     nada.classList.add("nada");
 
-      if (filtrados.length === 0) {
-          nada.innerHTML = 
-          `
+    if (filtrados.length === 0) {
+      nada.innerHTML =
+        `
           <i class="nada text"></i>
           <h3>Nenhum post encontrado</h3>
          
           `;
-          container.appendChild(nada);
-          return;
+      container.appendChild(nada);
+      return;
     }
     nada.innerHTML = "";
     container.innerHTML = "";
     filtrados.forEach((u) => {
       const card = document.createElement("div");
       card.classList.add("postCard");
-    
+
       // criando o card
       card.innerHTML =
-      `
+        `
+      <button type="button" class="irArtigo">
       <div class="imgBox">
         <img  src="${u.UrlImagem}"
         class="postImage">
       </div>
                 <div class="postTexts">
-                <button type="button" class="irArtigo"  onclick="location.href='BlogPage.html'">
                     <p class="postTitle">${u.tituloPost}</p>
-                    </button>
                     <p class="postdescription">${u.assuntoPost}</p>
-                </div>
-                <div class="postInfo" id="descer">
+                    </div>
+                    <div class="postInfo" id="descer">
                     <img src="../../assets/calendário1.png" alt="" class="postDateIcon">
                     <p class="postDateText">${u.dataPost}</p>
                     <p> • </p>
                     <img src="../../assets/cronômetro.png" alt="" class="postAutorIcon">
                     <p class="postAuthorText" id="editadoAh">${tempoDesde(u.Date)}</p>
-                </div>
+                    </div>
+                    </button>
         `
-                container.appendChild(card);
-            });
-            
+      container.appendChild(card);
+
+
+      card.querySelector(".irArtigo").onclick = () => {
+        
+        postExtendido(u.id)
+      };
+
+
+    });
+
   } catch (err) {
     console.error(err);
   }
@@ -103,24 +118,24 @@ async function listarPopular(p) {
     const nada = document.createElement("div");
     nada.classList.add("nada");
 
-  if (usuarios.length === 0) {
-          nada.innerHTML = 
-          `
+    if (usuarios.length === 0) {
+      nada.innerHTML =
+        `
           <i class="nada text"></i>
           <h3>Nenhum post encontrado</h3>
           
           `;
-          containerTop.appendChild(nada);
-          return;
+      containerTop.appendChild(nada);
+      return;
     }
     nada.innerHTML = "";
-    
-    
-      const cardDestaque = document.createElement("div");
-      cardDestaque.classList.add("card-destaque");
-    
-      // criando o card
-      cardDestaque.innerHTML = 
+
+
+    const cardDestaque = document.createElement("div");
+    cardDestaque.classList.add("card-destaque");
+
+    // criando o card
+    cardDestaque.innerHTML =
       `
                     <img src="${p.UrlImagem}" alt="" class="destaqueImg">
                     
@@ -139,35 +154,35 @@ async function listarPopular(p) {
                     </div>
       `
 
-                containerTop.appendChild(cardDestaque);
-                   
+    containerTop.appendChild(cardDestaque);
+
   } catch (err) {
     console.log(err);
   }
 }
 // lista os outros populares
 async function listarPopulares(p) {
- 
-    const nada = document.createElement("div");
-    nada.classList.add("nada");
 
-    if (usuarios.length <=  1) {
-          nada.innerHTML = 
-          `
+  const nada = document.createElement("div");
+  nada.classList.add("nada");
+
+  if (usuarios.length <= 1) {
+    nada.innerHTML =
+      `
           <i class="nada text"></i>
           <h3>Nenhum post encontrado</h3>
          
           `;
-          containerPopulares.appendChild(nada);
-          return;
-    }
-    containerPopulares.innerHTML = "";
-      p.forEach((u) => {
-      const cardPopulares = document.createElement("div");
-      cardPopulares.classList.add("popular-item");
-    
-      // criando o card
-      cardPopulares.innerHTML = 
+    containerPopulares.appendChild(nada);
+    return;
+  }
+  containerPopulares.innerHTML = "";
+  p.forEach((u) => {
+    const cardPopulares = document.createElement("div");
+    cardPopulares.classList.add("popular-item");
+
+    // criando o card
+    cardPopulares.innerHTML =
       ` 
       <img src="${u.UrlImagem}" alt="imagem">
                     <div>
@@ -178,35 +193,33 @@ async function listarPopulares(p) {
                     <span class="meta" id="editadoAh">${tempoDesde(u.Date)}</span>
                 </div>
       `
-      
-      containerPopulares.appendChild(cardPopulares);
-    });
- 
+
+    containerPopulares.appendChild(cardPopulares);
+  });
+
 }
 // formatação do tempo
 function tempoDesde(times) {
 
-    const agora = Date.now();
-   
-    const diferenca = agora - Number(times);
-    
-    if (diferenca < 0) return "editado agora";
-    
-    const segundos = Math.floor(diferenca / 1000);
-    if (segundos < 60) return `editado há ${segundos} segundos`;
+  const agora = Date.now();
 
-    const minutos = Math.floor(segundos / 60);
-    if (minutos < 60) return `editado há ${minutos} minutos`;
+  const diferenca = agora - Number(times);
 
-    const horas = Math.floor(minutos / 60);
-    if (horas < 24) return `editado há ${horas} horas`;
+  if (diferenca < 0) return "editado agora";
 
-    const dias = Math.floor(horas / 24);
-    return `editado há ${dias} dias`;
+  const segundos = Math.floor(diferenca / 1000);
+  if (segundos < 60) return `editado há ${segundos} segundos`;
+
+  const minutos = Math.floor(segundos / 60);
+  if (minutos < 60) return `editado há ${minutos} minutos`;
+
+  const horas = Math.floor(minutos / 60);
+  if (horas < 24) return `editado há ${horas} horas`;
+
+  const dias = Math.floor(horas / 24);
+  return `editado há ${dias} dias`;
 }
 
-// chamada de função
-faztudo();
 
 const btnPopulares = document.getElementById("btnPopulares");
 const btnExplorar = document.getElementById("btnExplorar");
@@ -241,12 +254,21 @@ if (btnExplorar) {
 }
 
 
+if (btnSubir) {
   btnSubir.addEventListener('click', (e) => {
     e.preventDefault();
     const target3 = header || document.getElementById("pHeader");
     if (!target3) return;
     // ajuste offset se tiver header fixo (valor em px)
-  
+
     const y = target3.getBoundingClientRect().top + window.pageYOffset;
     window.scrollTo({ top: y, behavior: 'smooth' });
   });
+}
+// chamada de função
+faztudo();
+
+
+function postExtendido(id) {
+  window.location.href = `BlogPage.html?id=${id}`
+}

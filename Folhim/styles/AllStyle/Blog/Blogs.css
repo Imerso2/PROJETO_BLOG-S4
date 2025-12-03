@@ -1,38 +1,44 @@
 @import url("../../Global.css");
-:root{
+
+:root {
     --texto: #000000;
     --principal: #263b54;
     --principal-clara: #3c526d;
-   
-    --secundaria: #6d0000; 
+
+    --secundaria: #6d0000;
     --secundaria-text: #ac4200;
-    --branco2: #cbd5dc; 
+    --branco2: #cbd5dc;
     --branco: #ffffff;
     --principal-clarinho: #4975ab;
 
 }
-.headerMain{
+
+.headerMain {
     border-bottom: 1px solid var(--principal-clara);
 }
-.mainContent{
+
+.mainContent {
     width: 70%;
     margin: 3% auto;
     align-items: center;
-  
+
 
 }
-.mainHeader{
+
+.mainHeader {
     display: flex;
     align-items: center;
     text-align: center;
     margin-bottom: 4%;
 }
-.mainTitle{
+
+.mainTitle {
     font-size: 24px;
-	font-weight: bold;
-	color: var(--texto);
+    font-weight: bold;
+    color: var(--texto);
 }
-.mainBtnAdicionar{
+
+.mainBtnAdicionar {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -49,64 +55,72 @@
     border: 2px solid var(--principal-clara);
 
 }
-.mainBtnAdicionar:hover{
+
+.mainBtnAdicionar:hover {
     padding: 12px;
     transition: 500ms;
     background-color: var(--principal);
 }
-.postsContainer{
+
+.postsContainer {
     border: 1px dashed var(--principal);
     border-radius: 5px;
     display: flex;
     flex-wrap: wrap;
-    gap: 3%;
-    
+
+    justify-content: center;
+
 }
-.postCard{
+
+.postCard {
     margin-top: 10px;
     margin-bottom: 10px;
     width: 30%;
     display: flex;
     flex-direction: column;
-     border: 1px solid var(--secundaria-text);
 }
-.content{
+
+.content {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.AdicionarIcon{
+
+.AdicionarIcon {
     color: var(--white);
     width: 16px;
     height: 16px;
     display: block;
 }
 
-.postImage{
+.postImage {
     width: 100%;
     height: 150px;
-    object-fit: cover;   /* mantém proporção, corta corretamente */
+    /* object-fit: cover;    mantém proporção, corta corretamente */
     border-radius: 4px;
     margin-bottom: 5px;
 }
-.postText{
+
+.postText {
     text-align: left;
     margin-bottom: 10px;
-    padding : 0 10px;
+    padding: 0 10px;
     justify-content: space-between;
     display: flex;
     flex-direction: column;
 
 }
-.postTitle{
+
+.postTitle {
     font-size: 20px;
     font-weight: bold;
     color: var(--black);
     max-width: 210px;
     margin: 15px 0 10px 0;
 }
-.postdescription{
-    
+
+.postdescription {
+
     font-size: 15px;
     color: var(--gray);
     margin-bottom: 8px;
@@ -115,38 +129,40 @@
     overflow-wrap: break-word;
     word-wrap: break-word;
 }
-.postInfo{
+
+.postInfo {
     margin-bottom: 2%;
-    display:flex;
+    display: flex;
     align-items: center;
     gap: 6px;
     flex: 1;
-    margin: 0 auto;
-}
-.postAuthorText{
-   font-size: 14px;
-   color: var(--dark-gray);
+
 }
 
-.postAutorIcon{
+.postAuthorText {
+    font-size: 14px;
+    color: var(--dark-gray);
+}
+
+.postAutorIcon {
     width: 16px;
     height: 16px;
 }
 
-.postDateText{
-     font-size: 14px;
-        color: var(--dark-gray);
+.postDateText {
+    font-size: 14px;
+    color: var(--dark-gray);
 }
 
-.postButtons{
-        display: flex;
-        gap: 5px;
-        align-items: center;
-        justify-content: space-between;
-        text-align: center;
+.postButtons {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
 }
 
-.postBtnEditar{
+.postBtnEditar {
     color: var(--);
     background-color: var(--secundaria);
     border: none;
@@ -162,7 +178,7 @@
     gap: 20%;
 }
 
-.postBtnExcluir{
+.postBtnExcluir {
     color: var(--white);
     background-color: var(--red);
     border: none;
@@ -177,23 +193,27 @@
     display: inline-flex;
     gap: 20%;
 }
-.imagExcluir{
+
+.imagExcluir {
     color: var(--white);
     width: 16px;
     height: 16px;
 }
-.imagExcluir{
+
+.imagExcluir {
     color: var(--white);
     width: 16px;
     height: 16px;
 }
-.returnImg{
+
+.returnImg {
     width: 30px;
     height: 30px;
     border: 3px solid var(--primary-purple);
     border-radius: 20px;
 }
-.headerUserInfo{
+
+.headerUserInfo {
     width: 15%;
     display: flex;
     align-items: center;
