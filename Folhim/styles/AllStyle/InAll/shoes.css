@@ -55,19 +55,53 @@
     cursor: pointer;
     text-align: center;
     margin-top: 5px;
+    background: none;
+    border: none;
+    font-size: 16px;
+   
 }
 
+.footerLink:hover {
+    transition: 300ms;
+    color: var(--branco);
+    font-size: 17px;
+    transform: translateX(-5px);
+}
+
+.footerMenus{
+    width: 40%;
+    margin-top: 5%;
+    justify-content: space-between;
+}
+.footerMenus{
+    display: inline-flex;
+    align-items: center;
+}
 .menu{
+    
+    text-align: left;
+    margin-top: 3%;
+    display: block;
+}
+.contato{
+    width: 50%;
     margin-right: 15%;
     text-align: left;
     margin-top: 3%;
     display: block;
 }
-.iconSobre, .iconPublicar{
-    height: 15px;
-    width: 15px;  
-}
 
+.icons{
+    height: 17px;
+    width: 17px;  
+}
+.icons:hover{
+   
+   transition: 500ms;
+    transform: translateX(-5px);
+    height: 20px;
+    width: 20px;
+}
 .menuText{
     font-size: 20px;
     font-weight: bold;

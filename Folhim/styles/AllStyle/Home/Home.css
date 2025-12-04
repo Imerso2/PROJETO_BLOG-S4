@@ -16,34 +16,7 @@
 
 /*Rato AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA*/
 /*pra la ana ratinha vea*/
-.alterPage{
-    margin-right: 15%;
-    display: flex;
-    align-items: center;
-    text-align: center;
-}
-.homeLink,.entrarLink,.blogsLink{
-    align-items: center;
-    text-align: center;
-    padding: 15px
-}
-.imgHome,.imgEntrar,.imgBlogs{
-    height: 20px;
-    width: 20px;
-}
-.alterButtons{
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 16px;
-    color: var(--branco2);
-    border: none;
-    cursor: pointer;
-    text-align: center;
-    background: none;
-    text-decoration: none;
-    font-size: 14px;
-}
+
 .mainHome{
     width: 100%;
     display: flex;
@@ -87,14 +60,14 @@
     cursor: pointer;
 }
 .btnAdd:hover{
-    height: 38px;
-    width: 12.2%;
+    transform: translateY(-5px);
+    
     transition: 500ms;
     background-color: var(--secundaria2);
 }
 .bntExplo:hover{
-    height: 38px;
-    width: 12.2%;
+    transform: translateY(-5px);
+    
     transition: 500ms;
     background-color: var(--secundaria2);
 }
@@ -122,6 +95,7 @@
     font-size: 32px;
 }
 .info{
+    width: 100%;
     margin-top: 2%;
     text-align: center;
     align-items: center;
@@ -147,31 +121,76 @@
     margin-top: 14px;
     font-size: 22px;
     line-height: 1.4;
+    
    
 }
 .irArtigo{
-    width: 100%;
+    border-radius: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+}
+.irArtigo:hover{
+    transform: translateY(-5px);
+    transition: 500ms;
+    color: var(--principal);
+    box-shadow: 10px var(--texto);
+    box-shadow: 0 4px 8px var(--texto);
+}
+.irPopulares{
     background: none;
     border: none;
     cursor: pointer;
     text-align: left;
-    padding: 0;
-    margin: 0;
-   
+    align-items: center;
+    display: flex;
+    gap: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--principal-clara);
+    border-radius: 10px;
 }
-.irArtigo:hover{
+.irPopulares:hover{
     transition: 500ms;
-    color: var(--principal-clara);
-    text-decoration: underline;
+    color: var(--principal);
+    box-shadow: 10px var(--texto);
+    box-shadow: 0 4px 8px var(--texto);
+    transform: translateY(-5px);
+}
+.irPopular{
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 2%;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 2px solid var(--principal-clara);
+    border-radius: 10px;
+    padding: 5px;
+}
+.irPopular:hover{
+    transition: 500ms;
+    color: var(--principal);
+    box-shadow: 0 4px 8px var(--texto);
+    transform: translateY(-5px);
+}
+.DestaqueTitle{
+    text-align: left;
+    width: 100%;
 }
 .meta {
     display: flex;
+    
     gap: 8px;
     margin-left: auto;
     font-size: 13px;
     color: var(--texto);
     align-items: center;
-    text-align: center;
+    text-align: left;
+    margin-left: auto;
 }
 .populares{
     padding-top:35px ;
@@ -189,7 +208,7 @@
     gap: 15px;
     margin-bottom: 25px;
     padding-bottom: 20px;
-    border-bottom: 2px solid var(--principal);
+   
 }
 .popular-item img {
     width: 80px;
@@ -212,18 +231,20 @@
     margin-left: 10%;
     margin-right: 10%;
     width: 80%;
+    padding: 1%;
     display: flex;
     flex-wrap: wrap;
-    gap: 1%;
-    justify-content: center;
+    justify-content: space-between;
+    gap: 1%;    
     border: 1px dashed var(--principal);
 }
 .postCardHome{ 
+    
     margin-top: 10px;
     margin-bottom: 10px;
     margin-bottom: 20px;
     height: 350px;
-    width: 30%;
+    width: 30%; 
 }
 .searchBox{
     justify-content: right;

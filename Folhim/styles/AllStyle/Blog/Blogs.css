@@ -57,8 +57,9 @@
 }
 
 .mainBtnAdicionar:hover {
-    padding: 12px;
-    transition: 500ms;
+    box-shadow: 0 4px 8px var(--texto);
+    transform: translateY(-2px);
+    transition: 300ms;
     background-color: var(--principal);
 }
 
@@ -67,9 +68,9 @@
     border-radius: 5px;
     display: flex;
     flex-wrap: wrap;
-
+    gap: 2%;
     justify-content: center;
-
+    
 }
 
 .postCard {
@@ -78,6 +79,7 @@
     width: 30%;
     display: flex;
     flex-direction: column;
+    text-align: left;
 }
 
 .content {
@@ -87,7 +89,7 @@
 }
 
 .AdicionarIcon {
-    color: var(--white);
+    color: var(--branco);
     width: 16px;
     height: 16px;
     display: block;
@@ -100,7 +102,10 @@
     border-radius: 4px;
     margin-bottom: 5px;
 }
-
+.postImage:hover{
+    box-shadow: 0 4px 8px var(--texto);
+    transition: 300ms;
+}
 .postText {
     text-align: left;
     margin-bottom: 10px;
@@ -114,22 +119,31 @@
 .postTitle {
     font-size: 20px;
     font-weight: bold;
-    color: var(--black);
+    color: var(--texto);
     max-width: 210px;
     margin: 15px 0 10px 0;
+    text-align: left;
 }
-
+.postTitle:hover{
+    font-size: 21px;
+    transition: 300ms;
+    transform: translateY(-2px);
+}
 .postdescription {
-
+    text-align: left;
     font-size: 15px;
-    color: var(--gray);
+    color: var(--principal);
     margin-bottom: 8px;
     max-width: 100%;
     white-space: normal;
     overflow-wrap: break-word;
     word-wrap: break-word;
 }
-
+.postdescription:hover{
+   
+    transition: 300ms;
+    transform: translateY(-2px);
+}
 .postInfo {
     margin-bottom: 2%;
     display: flex;
@@ -141,19 +155,37 @@
 
 .postAuthorText {
     font-size: 14px;
-    color: var(--dark-gray);
+    color: var(--principal-clara);
 }
 
 .postAutorIcon {
     width: 16px;
     height: 16px;
 }
-
+.postAutorIcon:hover{
+    width: 18px;
+    height: 18px;
+    transition: 300ms;
+    transform: translateY(-5px);
+}
 .postDateText {
     font-size: 14px;
-    color: var(--dark-gray);
+    color: var(--principal-clara);
 }
-
+.postAuthorText:hover,.postDateText:hover{
+    transition: 300ms;
+    transform: translateY(-2px);
+}
+.postDateIcon{
+    width: 16px;
+    height: 16px;
+}
+.postDateIcon:hover{
+    width: 18px;
+    height: 18px;
+    transition: 300ms;
+    transform: translateY(-5px);
+}
 .postButtons {
     display: flex;
     gap: 5px;
@@ -164,6 +196,26 @@
 
 .postBtnEditar {
     color: var(--);
+    background-color: var(--principal);
+    border: none;
+    cursor: pointer;
+    width: 160px;
+    height: 40px;
+    border-radius: 12px;
+    cursor: pointer;
+    padding: 15px;
+    text-align: center;
+    align-items: center;
+    display: inline-flex;
+    gap: 20%;
+}
+.postBtnEditar:hover{
+    box-shadow: 0 4px 8px var(--texto);
+    background-color: var(--principal-clarinho);
+    transition: 300ms;
+}
+.postBtnExcluir {
+    color: var(--branco);
     background-color: var(--secundaria);
     border: none;
     cursor: pointer;
@@ -177,21 +229,10 @@
     display: inline-flex;
     gap: 20%;
 }
-
-.postBtnExcluir {
-    color: var(--white);
-    background-color: var(--red);
-    border: none;
-    cursor: pointer;
-    width: 160px;
-    height: 40px;
-    border-radius: 12px;
-    cursor: pointer;
-    padding: 15px;
-    text-align: center;
-    align-items: center;
-    display: inline-flex;
-    gap: 20%;
+.postBtnExcluir:hover{
+    box-shadow: 0 4px 8px var(--texto);
+    background-color: var(--secundaria2);
+    transition: 300ms;
 }
 
 .imagExcluir {
@@ -207,12 +248,17 @@
 }
 
 .returnImg {
+
     width: 30px;
     height: 30px;
     border: 3px solid var(--primary-purple);
     border-radius: 20px;
 }
-
+.returnImg:hover{
+    box-shadow: 0 2px 4px var(--texto);
+    transition: 300ms;
+    transform: translateX(-5px);
+}
 .headerUserInfo {
     width: 15%;
     display: flex;

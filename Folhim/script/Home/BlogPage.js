@@ -6,11 +6,12 @@ const postExentended = document.getElementById("postExentended");
 const postExentendedBox = document.getElementById("postExentendedBox");
 let artigo= {};
 
+console.log(postId)
 async function load() {
     try {
         const res = await fetch(`${API_URL}/${postId}`);
         artigo = await res.json();
-        inprimir(artigo)
+        inprimir(artigo) 
     }
     catch (err) {
         console.log(err)

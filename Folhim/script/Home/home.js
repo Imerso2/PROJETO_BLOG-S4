@@ -101,7 +101,7 @@ async function listarArtigos(filter = "") {
 
 
       card.querySelector(".irArtigo").onclick = () => {
-        
+
         postExtendido(u.id)
       };
 
@@ -137,10 +137,11 @@ async function listarPopular(p) {
     // criando o card
     cardDestaque.innerHTML =
       `
+      <button type="button" class="irPopular" >
                     <img src="${p.UrlImagem}" alt="" class="destaqueImg">
                     
                     <div class="info">
-                        <span class="tag">${p.categoria}</span>
+                        <span class="tag">${p.categoria.toUpperCase()}</span>
                         <div class="meta">
                         <img src="../../assets/calendário1.png" alt="" class="calendarioIcon">
                           <span>${p.dataPost}</span>
@@ -148,14 +149,18 @@ async function listarPopular(p) {
                             <img src="../../assets/cronômetro.png" alt="" class="cronometroIcon">
                             <span id="editadoAh">${tempoDesde(p.Date)}</span>
                         </div>
-                        <button type="button" class="irArtigo"  onclick="location.href='BlogPage.html'">
+                        <div class="DestaqueTitle">
                             <h2>${p.tituloPost}</h2>
-                        </button>
-                    </div>
+                        </div>
+                            </div>
+                            </button>
       `
 
     containerTop.appendChild(cardDestaque);
+  card.querySelector(".irPopular").onclick = () => {
 
+        postExtendido(p.id)
+      };
   } catch (err) {
     console.log(err);
   }
@@ -184,17 +189,21 @@ async function listarPopulares(p) {
     // criando o card
     cardPopulares.innerHTML =
       ` 
+      <button type="button"  class="irPopulares">
       <img src="${u.UrlImagem}" alt="imagem">
                     <div>
-                        <p class="tag">${u.categoria}</p>
-                    <button type="button"  class="irArtigo" onclick="location.href='BlogPage.html'">
+                        <p class="tag">${u.categoria.toUpperCase()}</p>
                         <h4 class="tituloLateral">${u.tituloPost}</h4>
-                    </button>
-                    <span class="meta" id="editadoAh">${tempoDesde(u.Date)}</span>
-                </div>
+                        <span class="meta" id="editadoAh">${tempoDesde(u.Date)}</span>
+                        </div>
+                        </button>
       `
 
     containerPopulares.appendChild(cardPopulares);
+      cardPopulares.querySelector(".irPopulares").onclick = () => {
+
+        postExtendido(u.id)
+      };
   });
 
 }
@@ -272,3 +281,6 @@ faztudo();
 function postExtendido(id) {
   window.location.href = `BlogPage.html?id=${id}`
 }
+
+const cadastro = document.getElementById("cadastro")
+const login = document.getElementById("login")

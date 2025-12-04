@@ -32,10 +32,20 @@
     text-decoration: none;
 }
 
+.headerTitle:hover {
+    transition: 300ms;
+    transform: translateY(-2px);
+}
+
 .headerText {
     margin-right: 15%;
     font-size: 18px;
     color: var(--texto);
+}
+
+.headerText:hover {
+    transition: 300ms;
+    transform: translateY(-2px);
 }
 
 .headerHome {
@@ -54,6 +64,11 @@
     color: var(--texto);
 }
 
+.headerTitleHome:hover {
+    transition: 300ms;
+    transform: translateY(-2px);
+}
+
 .headerMainSobre {
     display: flex;
     align-items: center;
@@ -68,4 +83,49 @@
     font-weight: bold;
     color: var(--principal);
     text-decoration: none;
+}
+
+.alterPage {
+    margin-right: 15%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.homeLink,
+.entrarLink,
+.blogsLink {
+    align-items: center;
+    text-align: center;
+    padding: 15px
+}
+
+.imgLinks {
+    height: 20px;
+    width: 20px;
+}
+
+.imgLinks:hover {
+    transition: 300ms;
+    height: 22px;
+    width: 22px;
+}
+
+.alterButtons {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px;
+    color: var(--branco2);
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    background: none;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.alterButtons:hover {
+    transform: translateY(-5px);
+    transition: 300ms;
 }

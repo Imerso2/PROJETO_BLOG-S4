@@ -114,7 +114,7 @@ async function listarArtigos() {
                 <div class="postInfo">
                     <img src="../../assets/calendário1.png" alt="" class="postDateIcon">
                     <p class="postDateText">${u.dataPost}</p>
-                    <p> • </p>
+                    
                     <img src="../../assets/contato1.png" alt="" class="postAutorIcon">
                     <p class="postAuthorText">${u.nomePost}</p>
                 </div>
