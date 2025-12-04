@@ -38,8 +38,12 @@ function inprimir(artigo) {
                         <img src="../../assets/cronômetro.png" alt="cronômetro" class="cronometroIcon">
                         <span>${tempoDesde(artigo.Date)}</span>
                     </div>
-                </div>
-            </div>
+                    </div>
+                    </div>
+                    <div class="assunto">
+                    <h1>${artigo.tituloPost}</h1>
+                    <p>${artigo.assuntoPost}</p>
+                    </div>
     `
 postExentendedBox.appendChild(postExentended)
 }

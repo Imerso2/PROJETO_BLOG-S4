@@ -16,14 +16,14 @@
 
             <div class="entrarLink">
                 <button type="button" class="alterButtons" id="cadastro">
-                    <img class="imgLinks" src="../../assets/headerUser.png" alt="">Cadastrar-se
+                    <img class="imgLinks" src="../../assets/contato.png" alt="">Cadastrar-se
                 </button>
             </div>
 
             <div class="blogsLink">
-                <button  type="button" href="../../Pages/Blogs/Blogs.html" class="alterButtons">
+                <a  type="button" href="../../Pages/Blogs/Blogs.html" class="alterButtons">
                     <img class="imgLinks" src="../../assets/tecnologia.png" alt="">Publicar
-                </button>
+                </a>
             </div>
 
             <div class="blogsHome">
@@ -114,7 +114,7 @@
 
                     <div>
                         <button type="button" href="../../Pages/Blogs/Blogs.html" class="footerLink"> <img
-                                class="icons" src="../../assets/headerUser.png" alt="Person icon">
+                                class="icons" src="../../assets/contato.png" alt="Person icon">
                             Cadastrar</button>
                     </div>
                 </div>
@@ -141,34 +141,36 @@
         </div>
     </footer>
 
-    <script src="../../script/Home/home.js"></script>
     <a href="" id="bntSubir" class="top" title="top"><img class="topImg" src="../../assets/top.png" alt="top"></a>
+    
     <div id="loginBox" class="loginBox">
+
         <div class="login">
             <div class="criarHeader">
-        <p class="titleText">Cadastro</p>
-      </div>
-      <div class="descriptionBox">
+                <p class="titleText">Cadastro</p>
+            </div>
+            <div class="descriptionBox">
         <p class="description"> Faça seu cadastro para poder publicar artigos </p>
       </div>
       <form id="formUsuario" class="formContainer">
-        <div class="inputBox">
-          <label for="Email"> Email </label>
-          <input type="email" id="nome" placeholder="Informe seu Email" required/>
-        </div>
-
-        <div class="inputBox">
-          <label for="Senha"> Senha </label>
-          <input type="text" id="assunto" placeholder="Crie sua Senha" required/>
+          <div class="inputBox">
+              <label for="Email"> Email </label>
+              <input type="email" id="nome" placeholder="Informe seu Email" required/>
+            </div>
+            
+            <div class="inputBox">
+                <label for="Senha"> Senha </label>
+                <input type="text" id="assunto" placeholder="Crie sua Senha" required/>
         </div>
 
         <div class="criarButtons">
           <button type="button" id="btnCancelar" class="btnCancelar"> Cancelar </button>
-          <button type="submit" class="btnSalvar" > Cadastrar-se </button>
+          <button type="submit" id="btnSalvar" class="btnSalvar" > Cadastrar-se </button>
         </div>
       </form>
         </div>
     </div>
 </body>
+<script src="../../script/Home/home.js"></script>
 
 </html>

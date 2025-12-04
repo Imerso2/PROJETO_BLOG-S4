@@ -41,9 +41,9 @@
     
 }
 .btnAdd{
-    background-color: var(--secundaria);
-    color: var(--branco);
-    border: var(--secundaria);
+    background-color: var(--principal-clarinho);
+    color: var(--texto);
+    border: var(--principal);
     height: 35px;
     width: 12%;
     border-radius: 30px;
@@ -51,9 +51,9 @@
 }
 
 .bntExplo{
-    background-color: var(--secundaria);
-    color: var(--branco);
-    border: var(--secundaria);
+    background-color: var(--principal-clarinho);
+    color: var(--texto);
+    border: var(--principal);
     height: 35px;
     width: 12%;
     border-radius: 30px;
@@ -63,13 +63,13 @@
     transform: translateY(-5px);
     
     transition: 500ms;
-    background-color: var(--secundaria2);
+    background-color: var(--branco2);
 }
 .bntExplo:hover{
     transform: translateY(-5px);
     
     transition: 500ms;
-    background-color: var(--secundaria2);
+    background-color: var(--branco2);
 }
 
 .container {

@@ -157,7 +157,7 @@ async function listarPopular(p) {
       `
 
     containerTop.appendChild(cardDestaque);
-  card.querySelector(".irPopular").onclick = () => {
+  cardDestaque.querySelector(".irPopular").onclick = () => {
 
         postExtendido(p.id)
       };
@@ -189,7 +189,7 @@ async function listarPopulares(p) {
     // criando o card
     cardPopulares.innerHTML =
       ` 
-      <button type="button"  class="irPopulares">
+      <button type="button" class="irPopulares">
       <img src="${u.UrlImagem}" alt="imagem">
                     <div>
                         <p class="tag">${u.categoria.toUpperCase()}</p>
@@ -200,7 +200,7 @@ async function listarPopulares(p) {
       `
 
     containerPopulares.appendChild(cardPopulares);
-      cardPopulares.querySelector(".irPopulares").onclick = () => {
+    cardPopulares.querySelector(".irPopulares").onclick = () => {
 
         postExtendido(u.id)
       };
@@ -282,5 +282,48 @@ function postExtendido(id) {
   window.location.href = `BlogPage.html?id=${id}`
 }
 
-const cadastro = document.getElementById("cadastro")
-const login = document.getElementById("login")
+const cadastro = document.getElementById("cadastro");
+const login = document.getElementById("loginBox");
+
+  cadastro.addEventListener('click', () => {
+  login.classList.add("ativo");
+  });
+const btnCancelar = document.getElementById("btnCancelar")
+
+btnCancelar.addEventListener('click',()=>{
+  login.classList.remove("ativo");
+
+});
+// OUTRA COISAAAAA
+cadastroForm.onsubmit = async function (e) {
+  e.preventDefault();
+  let usuario = {
+    nomePost: nome.value,
+    tituloPost: title.value,
+    categoria: categoria.value.trim(),
+    assuntoPost: assunto.value,
+    UrlImagem: url.value.trim(),
+    dataPost: `${dia} ${monthString} ${ano}`,
+    Date: agora
+
+  };
+  try {
+    if (editId) {
+      await fetch(`${API_URL}/${editId}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(usuario),
+      });
+    } else {
+      await fetch(API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(usuario),
+      });
+    }
+  }
+  catch(err){
+    console.log(err)
+  }
+
+};

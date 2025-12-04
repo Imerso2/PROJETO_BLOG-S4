@@ -69,7 +69,8 @@
     display: flex;
     flex-wrap: wrap;
     gap: 2%;
-    justify-content: center;
+    justify-content: space-between;
+    padding: 10px;
     
 }
 
@@ -140,7 +141,6 @@
     word-wrap: break-word;
 }
 .postdescription:hover{
-   
     transition: 300ms;
     transform: translateY(-2px);
 }
@@ -195,7 +195,7 @@
 }
 
 .postBtnEditar {
-    color: var(--);
+    color: var(--branco2);
     background-color: var(--principal);
     border: none;
     cursor: pointer;
@@ -215,8 +215,8 @@
     transition: 300ms;
 }
 .postBtnExcluir {
-    color: var(--branco);
-    background-color: var(--secundaria);
+    color: var(--branco2);
+    background-color: var(--principal);
     border: none;
     cursor: pointer;
     width: 160px;
@@ -231,15 +231,10 @@
 }
 .postBtnExcluir:hover{
     box-shadow: 0 4px 8px var(--texto);
-    background-color: var(--secundaria2);
+    background-color: var(--principal-clarinho);
     transition: 300ms;
 }
 
-.imagExcluir {
-    color: var(--white);
-    width: 16px;
-    height: 16px;
-}
 
 .imagExcluir {
     color: var(--white);

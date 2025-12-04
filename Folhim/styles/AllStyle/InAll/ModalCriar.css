@@ -155,6 +155,7 @@
     backdrop-filter: blur(8px); /*  trasparente */ 
     justify-content: center;
     align-items: center;
+    position: fixed;
 }
 .excluir.active {
     display: flex; /* genial deixa visivel agora massa demais */
@@ -168,4 +169,27 @@
   font-size: 16px;
   color: var(--texto);
   padding: 5px 24px;
+}
+.loginBox{
+    display: none; /* genial deixa invisible massa demais */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-color-blur); /*  trasparente */ 
+    -webkit-backdrop-filter: blur(8px); /*  trasparente */ 
+    backdrop-filter: blur(8px); /*  trasparente */ 
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+}
+.loginBox.ativo{
+
+  display: flex;
+}
+.login{
+
+  background-color: var(--branco2);
+  border-radius: 10px;
 }
