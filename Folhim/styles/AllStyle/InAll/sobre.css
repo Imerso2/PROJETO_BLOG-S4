@@ -1,3 +1,128 @@
 @import url(../../Global.css);
 
 
+:root{
+    --texto: #000000;
+    --principal: #263b54;
+    --principal-clara: #3c526d;
+   
+    --secundaria: #6d0000; 
+    --secundaria2: #c91010;
+    --secundaria-text: #ac4200;
+    --branco2: #cbd5dc; 
+    --branco: #ffffff;
+    --principal-clarinho: #5f84b3;
+
+
+}
+
+.tudo{
+    padding: 60px;
+    margin: 0;
+    background-color: var(--principal);
+
+}
+
+.titulo{
+    padding: 20px;
+    color: var(--branco2);
+}
+
+.metade{
+    display: flex;
+    justify-content: space-between;
+    padding: 4px;
+    gap: 300px;
+    align-items: center;
+}
+
+.textExplicativo {
+    color: var(--branco2);
+}
+
+.ImgPrincipalSobre{
+    width: 200px;
+    height: 300px;
+      display: flex;
+    justify-content: space-between;
+
+}
+
+
+
+
+.footerMainSobre{
+
+    background-color: var(--principal);
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 8%;
+    justify-content: space-between;
+    align-items: center;
+}
+.footerText{
+    color: var(--branco2);
+    text-align: center;
+    
+    width: 40%;
+}
+.footerTitle{
+    color: var(--texto);
+    font-weight: bold;
+    margin-left: 15%;
+    font-size: 24px;
+}
+.footerDescription{
+    color: var(--branco2);
+    margin-left: 15%;
+    font-size: 16px;
+}
+
+
+.footerLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    margin-left: auto;
+    color: var(--branco2);
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 5px;
+    background: none;
+    border: none;
+    font-size: 16px;
+   
+}
+
+.footerLink:hover {
+    transition: 300ms;
+    color: var(--branco);
+    font-size: 17px;
+    transform: translateX(-5px);
+}
+
+.footerMenus{
+    width: 40%;
+    margin-top: 5%;
+    justify-content: space-between;
+}
+.footerMenus{
+    display: inline-flex;
+    align-items: center;
+}
+.menu{
+    
+    text-align: left;
+    margin-top: 3%;
+    display: block;
+}
+
+.footerCopy{
+    text-align: center;
+    margin: 1%;    
+    width: 100%;     
+    color: var(--branco2);     
+}
