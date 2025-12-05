@@ -17,8 +17,7 @@
 }
 
 .tudo{
-    padding: 60px;
-    margin: 0;
+   
     background-color: var(--principal);
 
 }
@@ -29,10 +28,10 @@
 }
 
 .metade{
+    margin-right: 10%;
+    margin-left: 10%;
     display: flex;
     justify-content: space-between;
-    padding: 4px;
-    gap: 300px;
     align-items: center;
 }
 
@@ -41,11 +40,13 @@
 }
 
 .ImgPrincipalSobre{
-    width: 200px;
-    height: 300px;
-      display: flex;
+    width: 100%;
+    display: flex;
     justify-content: space-between;
 
+}
+.ImgBox{
+    max-width: 500px;
 }
 
 
