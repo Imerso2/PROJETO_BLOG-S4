@@ -17,7 +17,6 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--primary-color-blur); /*  trasparente */ 
   -webkit-backdrop-filter: blur(8px); /*  trasparente */ 
   backdrop-filter: blur(8px); /*  trasparente */ 
   justify-content: center;
@@ -150,7 +149,6 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--primary-color-blur); /*  trasparente */ 
     -webkit-backdrop-filter: blur(8px); /*  trasparente */ 
     backdrop-filter: blur(8px); /*  trasparente */ 
     justify-content: center;
@@ -170,21 +168,20 @@
   color: var(--texto);
   padding: 5px 24px;
 }
-.loginBox{
+.cadastroBox{
     display: none; /* genial deixa invisible massa demais */
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--primary-color-blur); /*  trasparente */ 
     -webkit-backdrop-filter: blur(8px); /*  trasparente */ 
     backdrop-filter: blur(8px); /*  trasparente */ 
     justify-content: center;
     align-items: center;
     position: fixed;
 }
-.loginBox.ativo{
+.cadastroBox.ativo{
 
   display: flex;
 }
@@ -192,4 +189,72 @@
 
   background-color: var(--branco2);
   border-radius: 10px;
+}
+.login.ativo{
+  display: flex;
+}
+.modalError{
+    display: none; /* genial deixa invisible massa demais */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-backdrop-filter: blur(8px); /*  trasparente */ 
+    backdrop-filter: blur(8px); /*  trasparente */ 
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+}
+.modalError.ativo{
+  display: flex;
+}
+
+.nada{
+
+    display: none;
+    color: var(--principal);
+    font-size: 18px;
+    background-color: var(--branco2);
+    width: 100%;
+    min-height: 250px;
+    
+
+}
+.nada h3{
+    margin: auto;
+    text-align: center;
+}
+.nada.nada{
+    display: flex;
+}
+.pupularinhos{  
+    min-height: 400px;
+}
+.nadaP{
+  color: var(--texto);
+  font-size: 14px;
+}
+.top{
+    height: 30px;
+    width: 30px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--principal-clara);
+    border: none;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px var(--texto);
+}
+.top:hover{
+    transition: 500ms;
+    height: 33px;
+    width: 33px;
+}
+
+.topImg{
+    height: 100%;
+    width: 100%;
 }

@@ -14,22 +14,6 @@
 
 }
 
-.alterPage{
-    margin-right: 15%;
-    display: flex;
-    align-items: center;
-    text-align: center;
-
-}
-.homeLink,.entrarLink,.blogsLink{
-    align-items: center;
-    text-align: center;
-    padding: 10px
-}
-.imgHome,.imgEntrar,.imgBlogs{
-    height: 20px;
-    width: 20px;
-}
 
 .inicio{
     width: 100%;

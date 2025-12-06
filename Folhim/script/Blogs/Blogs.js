@@ -1,6 +1,6 @@
 
 const API_URL = "http://localhost:3000/userPost";
-
+const API_URL_U = "http://localhost:3000/user";
 //dataaaaaaaaa
 const date = new Date();
 const agora = Date.now()
@@ -31,7 +31,7 @@ const card = document.createElement("div");
 
 const container = document.getElementById("postsContainer");
 
-let usuarios = [];
+let posts = [];
 let IDpost = 0;
 let editId = null;
 
@@ -55,7 +55,7 @@ btnCancelar.addEventListener('click', () => {
 
 form.onsubmit = async function (e) {
   e.preventDefault();
-  let usuario = {
+  let posts = {
     nomePost: nome.value,
     tituloPost: title.value,
     categoria: categoria.value.trim(),
@@ -70,13 +70,13 @@ form.onsubmit = async function (e) {
       await fetch(`${API_URL}/${editId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(usuario),
+        body: JSON.stringify(posts),
       });
     } else {
       await fetch(API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(usuario),
+        body: JSON.stringify(posts),
       });
     }
 
@@ -93,18 +93,16 @@ form.onsubmit = async function (e) {
 async function listarArtigos() {
   try {
     const res = await fetch(API_URL);
-    usuarios = await res.json();
+    posts = await res.json();
 
     const nada = document.createElement("div");
     nada.classList.add("nada");
     
-    if (usuarios.length === 0) {
-      nada.innerHTML =
-        `
-
-        <h3>Publique algum Post<p class="nadaP">Comece sua historia <br> publicando um</p></h3>
-                  
-        `;
+    if (posts.length === 0) {
+      nada.innerHTML = `
+        <h3>Nenhum post encontrado <p class="nadaP">Comece sua história publicando um post</p></h3>
+        
+      `;
       container.appendChild(nada);
       return;
     }
@@ -112,7 +110,7 @@ async function listarArtigos() {
 
     container.innerHTML = "";
 
-    usuarios.forEach((u) => {
+    posts.forEach((u) => {
 
       const card = document.createElement("div");
       card.classList.add("postCard");

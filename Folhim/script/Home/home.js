@@ -1,9 +1,10 @@
 
+const API_URL_U = "http://localhost:3000/user";
 const API_URL = "http://localhost:3000/userPost";
-
 
 const date = new Date();
 let usuarios = [];
+let users = [];
 let times;
 
 
@@ -31,7 +32,7 @@ async function faztudo() {
 
     listarArtigos();
     listarPopular(usuarios[0]);
-
+   
 
   }
   catch (err) {
@@ -91,7 +92,6 @@ async function listarArtigos(filter = "") {
                     <div class="postInfo" id="descer">
                     <img src="../../assets/calendário1.png" alt="" class="postDateIcon">
                     <p class="postDateText">${u.dataPost}</p>
-                    <p> • </p>
                     <img src="../../assets/cronômetro.png" alt="" class="postAutorIcon">
                     <p class="postAuthorText" id="editadoAh">${tempoDesde(u.Date)}</p>
                     </div>
@@ -142,10 +142,9 @@ async function listarPopular(p) {
                         <span class="tag">${p.categoria.toUpperCase()}</span>
                         <div class="meta">
                         <img src="../../assets/calendário1.png" alt="" class="calendarioIcon">
-                          <span>${p.dataPost}</span>
-                            <span>•</span>
+                          <span class="postDateText">${p.dataPost}</span>
                             <img src="../../assets/cronômetro.png" alt="" class="cronometroIcon">
-                            <span id="editadoAh">${tempoDesde(p.Date)}</span>
+                            <span class="postAuthorText">${tempoDesde(p.Date)}</span>
                         </div>
                         <div class="DestaqueTitle">
                             <h2>${p.tituloPost}</h2>
@@ -155,10 +154,10 @@ async function listarPopular(p) {
       `
 
     containerTop.appendChild(cardDestaque);
-  cardDestaque.querySelector(".irPopular").onclick = () => {
+    cardDestaque.querySelector(".irPopular").onclick = () => {
 
-        postExtendido(p.id)
-      };
+      postExtendido(p.id)
+    };
   } catch (err) {
     console.log(err);
   }
@@ -188,11 +187,14 @@ async function listarPopulares(p) {
     cardPopulares.innerHTML =
       ` 
       <button type="button" class="irPopulares">
-      <img src="${u.UrlImagem}" alt="imagem">
-                    <div>
+      <img src="${u.UrlImagem}" alt="imagem" class="imgPopulares">
+                    <div class="metaPopulares">
                         <p class="tag">${u.categoria.toUpperCase()}</p>
                         <h4 class="tituloLateral">${u.tituloPost}</h4>
+                        <div class="editadoPopulares">
+                        <img src="../../assets/cronômetro.png" alt="" class="cronometroIcon">
                         <span class="meta" id="editadoAh">${tempoDesde(u.Date)}</span>
+                        </div>
                         </div>
                         </button>
       `
@@ -200,8 +202,8 @@ async function listarPopulares(p) {
     containerPopulares.appendChild(cardPopulares);
     cardPopulares.querySelector(".irPopulares").onclick = () => {
 
-        postExtendido(u.id)
-      };
+      postExtendido(u.id)
+    };
   });
 
 }
@@ -233,7 +235,7 @@ const btnExplorar = document.getElementById("btnExplorar");
 const btnSubir = document.getElementById("btnSubir");
 const header = document.getElementById("header");
 
-// só adiciona o listener se o elemento existir
+
 if (btnPopulares) {
   btnPopulares.addEventListener('click', (e) => {
     e.preventDefault();
@@ -281,47 +283,82 @@ function postExtendido(id) {
 }
 
 const cadastro = document.getElementById("cadastro");
-const login = document.getElementById("loginBox");
-
-  cadastro.addEventListener('click', () => {
-  login.classList.add("ativo");
-  });
+const cadastroBox = document.getElementById("cadastroBox");
 const btnCancelar = document.getElementById("btnCancelar")
 
-btnCancelar.addEventListener('click',()=>{
-  login.classList.remove("ativo");
-
+cadastro.addEventListener('click', () => {
+  chamarCadastro();
 });
-// OUTRA COISAAAAA
-cadastroForm.onsubmit = async function (e) {
-  e.preventDefault();
-  let usuario = {
-    nomePost: nome.value,
-    tituloPost: title.value,
-    categoria: categoria.value.trim(),
-    assuntoPost: assunto.value,
-    UrlImagem: url.value.trim(),
-    dataPost: `${dia} ${monthString} ${ano}`,
-    Date: agora
+btnCancelar.addEventListener('click', () => {
+  cancelarCadastro()
+});
+function chamarCadastro(){
+  cadastroBox.classList.add("ativo");
+}
+function cancelarCadastro(){
+    cadastroBox.classList.remove("ativo");
+}
 
-  };
-  try {
-    if (editId) {
-      await fetch(`${API_URL}/${editId}`, {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(usuario),
-      });
-    } else {
-      await fetch(API_URL, {
+const Nome = document.getElementById("Nome")
+const Email = document.getElementById("Email")
+const Senha = document.getElementById("Senha")
+
+
+
+
+
+const cadastroForm = document.getElementById("cadastroForm")
+const error = document.getElementById("error")
+
+
+  cadastroForm.onsubmit = async function (e) {
+    e.preventDefault();
+    try {
+      const res = await fetch(API_URL_U);
+      users = await res.json();
+
+      let user = {
+        nome: Nome.value.trim(),
+        email: Email.value.trim(),
+        senha: Senha.value
+      };
+      // verifica se existe usuário com mesmo email ou nome
+      let existe = false;
+      for (let i = 0; i < users.length; i++) {
+        if (users[i].email === user.email && users[i].nome === user.nome) {
+          existe = true;
+          break;
+        }
+      }
+
+      if (existe) {
+        // mostra erro e não cadastra
+        error.classList.add("ativo")
+        cadastroBox.classList.remove("ativo");
+        return;
+      }
+
+      // cadastra novo usuário
+      await fetch(API_URL_U, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(usuario),
+        body: JSON.stringify(user),
       });
-    }
-  }
-  catch(err){
-    console.log(err)
-  }
 
-};
+      // limpa e fecha o formulário
+      cadastroBox.classList.remove("ativo");
+      cadastroForm.reset();
+     
+
+    } catch (err) {
+      console.log(err);
+      
+    }
+  };
+const btnVoltar = document.getElementById("bntVoltar")
+
+btnVoltar.addEventListener('click',()=>{
+chamarCadastro();
+error.classList.remove("ativo")
+});
+

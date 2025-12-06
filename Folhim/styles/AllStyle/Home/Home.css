@@ -101,6 +101,7 @@
     align-items: center;
     display: flex;
     flex-wrap: wrap;
+    padding: 5px;
 }
 .card-destaque {
     background: var(--branco);
@@ -116,6 +117,10 @@
     font-size: 12px;
     font-weight: bold;
     text-align: left;
+}
+.tag:hover{
+    transition: 300ms;
+    transform: translateY(-2px);
 }
 .card-destaque h2 {
     margin-top: 14px;
@@ -169,7 +174,7 @@
     flex-wrap: wrap;
     border-bottom: 2px solid var(--principal-clara);
     border-radius: 10px;
-    padding: 5px;
+    
 }
 .irPopular:hover{
     transition: 500ms;
@@ -181,6 +186,13 @@
     text-align: left;
     width: 100%;
 }
+.DestaqueTitle h2{
+    max-width: 12%;
+}
+.DestaqueTitle h2:hover{
+    transition: 300ms;
+    transform: translateY(-5px);
+}   
 .meta {
     display: flex;
     gap: 8px;
@@ -209,7 +221,14 @@
     padding-bottom: 20px;
    
 }
-.popular-item img {
+.metaPopulares{
+    margin: 5px;
+}
+.editadoPopulares{
+    display: flex;
+    gap: 5px;
+}
+.imgPopulares{
     width: 80px;
     height: 70px;
     border-radius: 5px;
@@ -258,11 +277,19 @@
     border: 2px solid var(--principal);
     border-radius: 6px;
 }
-.searchBox:hover{
-   
-    transition: 500ms;
-    border: 2px solid var(--principal-clara);
+.searchBox{
+    justify-content: right;
+    display: flex;
+    border: 2px solid var(--principal);
+    border-radius: 6px;
+    box-sizing: border-box;
+    transition: border-color 300ms, transform 300s, padding 300ms; /* xate */
+}
 
+.searchBox:hover{
+    padding: 5px;
+    border-color: var(--principal-clara);
+    transform: translateY(-5px);
 }
 .searchInp{
     border: none;
@@ -279,6 +306,7 @@
     padding: 1px;
     border-radius: 4px;
 }
+
 .homeTitle{
     font-size: 24px;
     font-weight: bold;
@@ -300,46 +328,9 @@
     height: 16px;
     width: 16px;
 }
-.top{
-    height: 30px;
-    width: 30px;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: var(--principal-clara);
-    border: none;
-    border-radius: 50%;
-    padding: 5px;
-    cursor: pointer;
-    box-shadow: 0 4px 8px var(--texto);
-}
-.top:hover{
-    transition: 500ms;
-    height: 33px;
-    width: 33px;
-}
-
-.topImg{
-    height: 100%;
-    width: 100%;
-}
-.nada{
-
-    display: none;
-    color: var(--principal);
-    font-size: 18px;
-    background-color: var(--branco2);
-    width: 100%;
-    min-height: 250px;
-    
-
-}
-.nada h3{
-    margin: auto;
-}
-.nada.nada{
-    display: flex;
-}
-.pupularinhos{  
-    min-height: 400px;
+.calendarioIcon:hover,.cronometroIcon:hover{
+    width: 18px;
+    height: 18px;
+    transition: 300ms;
+    transform: translateY(-5px);
 }

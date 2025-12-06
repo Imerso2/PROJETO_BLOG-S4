@@ -21,7 +21,7 @@
             </div>
 
             <div class="blogsLink">
-                <a  type="button" href="../../Pages/Blogs/Blogs.html" class="alterButtons">
+                <a type="button" href="../../Pages/Blogs/Blogs.html" class="alterButtons">
                     <img class="imgLinks" src="../../assets/tecnologia.png" alt="">Publicar
                 </a>
             </div>
@@ -113,8 +113,8 @@
                     </div>
 
                     <div>
-                        <button type="button" href="../../Pages/Blogs/Blogs.html" class="footerLink"> <img
-                                class="icons" src="../../assets/contato.png" alt="Person icon">
+                        <button type="button" href="../../Pages/Blogs/Blogs.html" class="footerLink"> <img class="icons"
+                                src="../../assets/contato.png" alt="Person icon">
                             Cadastrar</button>
                     </div>
                 </div>
@@ -123,7 +123,7 @@
 
                     <div>
                         <a href="https://github.com/Anaborges08" class="footerLink"> <img class="icons"
-                                src="../../assets/GitHubIcon.png" alt="Git Hub Icon"> Anaborges80   </a>
+                                src="../../assets/GitHubIcon.png" alt="Git Hub Icon"> Anaborges80 </a>
                     </div>
 
                     <div>
@@ -133,7 +133,7 @@
 
                     <div>
                         <a href="https://github.com/Renancorea" class="footerLink"> <img class="icons"
-                                src="../../assets/GitHubIcon.png" alt="Git Hub Icon"> Renancorea    </a>
+                                src="../../assets/GitHubIcon.png" alt="Git Hub Icon"> Renancorea </a>
                     </div>
                 </div>
             </div>
@@ -142,34 +142,94 @@
     </footer>
 
     <a href="" id="bntSubir" class="top" title="top"><img class="topImg" src="../../assets/top.png" alt="top"></a>
-    
-    <div id="loginBox" class="loginBox">
+    <!-- modal cadastro-->
+    <div id="cadastroBox" class="cadastroBox">
 
         <div class="login">
             <div class="criarHeader">
                 <p class="titleText">Cadastro</p>
             </div>
             <div class="descriptionBox">
-        <p class="description"> Faça seu cadastro para poder publicar artigos </p>
-      </div>
-      <form id="formUsuario" class="formContainer">
-          <div class="inputBox">
-              <label for="Email"> Email </label>
-              <input type="email" id="nome" placeholder="Informe seu Email" required/>
+                <p class="description"> Faça seu cadastro para poder publicar artigos </p>
             </div>
-            
-            <div class="inputBox">
-                <label for="Senha"> Senha </label>
-                <input type="text" id="assunto" placeholder="Crie sua Senha" required/>
-        </div>
+            <form id="cadastroForm" class="formContainer">
+                <div class="inputBox">
+                    <label for="name"> Nome </label>
+                    <input type="text" id="Nome" placeholder="Informe seu nome" required />
+                </div>
 
-        <div class="criarButtons">
-          <button type="button" id="btnCancelar" class="btnCancelar"> Cancelar </button>
-          <button type="submit" id="btnSalvar" class="btnSalvar" > Cadastrar-se </button>
-        </div>
-      </form>
+                <div class="inputBox">
+                    <label for="Email"> Email </label>
+                    <input type="email" id="Email" placeholder="Informe seu Email" required />
+                </div>
+
+                <div class="inputBox">
+                    <label for="Senha"> Senha </label>
+                    <input type="password" id="Senha" placeholder="Crie sua Senha" required />
+                </div>
+
+
+                <div class="criarButtons">
+                    <button type="button" id="btnCancelar" class="btnCancelar"> Cancelar </button>
+                    <button type="submit" id="btnSalvar" class="btnSalvar"> Cadastrar-se </button>
+                </div>
+            </form>
         </div>
     </div>
+    <!-- modal cadastro-->
+
+    <!-- modal cadastro erro-->
+    <div class="modalError" id="error">
+        <div class="login">
+            <div class="criarHeader">
+                <p class="titleText">Ja existe um cadastro com essas informações</p>
+            </div>
+            
+
+            <div class="criarButtons">
+                <button type="button" id="bntVoltar" class="btnCancelar"> Tentar Novamente </button>
+                <button type="button" id="btnLogin" class="btnSalvar"> fazer login</button>
+            </div>
+
+        </div>
+    </div>
+     <!-- modal cadastro erro-->
+
+      <!-- modal login-->
+<div id="login" class="cadastroBox">
+
+        <div class="login">
+            <div class="criarHeader">
+                <p class="titleText">Cadastro</p>
+            </div>
+            <div class="descriptionBox">
+                <p class="description"> Faça seu cadastro para poder publicar artigos </p>
+            </div>
+            <form id="cadastroForm" class="formContainer">
+                <div class="inputBox">
+                    <label for="name"> Nome </label>
+                    <input type="text" id="NomeLogin" placeholder="Informe seu nome" required />
+                </div>
+
+                <div class="inputBox">
+                    <label for="Email"> Email </label>
+                    <input type="email" id="EmailLogin" placeholder="Informe seu Email" required />
+                </div>
+
+                <div class="inputBox">
+                    <label for="Senha"> Senha </label>
+                    <input type="password" id="SenhaLogin" placeholder="Digite sua Senha" required />
+                </div>
+
+
+                <div class="criarButtons" id="criarButtons">
+                    <button type="button" id="btnCancelarLogin" class="btnCancelar"> Cancelar </button>
+                    <button type="submit" id="btnEntrar" class="btnSalvar"> Entrar </button>
+                </div>
+            </form>
+        </div>
+    </div>
+      <!-- modal login-->
 </body>
 <script src="../../script/Home/home.js"></script>
 
