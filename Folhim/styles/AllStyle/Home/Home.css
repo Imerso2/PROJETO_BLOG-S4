@@ -183,7 +183,6 @@
 }
 .meta {
     display: flex;
-    
     gap: 8px;
     margin-left: auto;
     font-size: 13px;
@@ -234,18 +233,25 @@
     padding: 1%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    gap: 5%;
     gap: 1%;    
     border: 1px dashed var(--principal);
 }
 .postCardHome{ 
-    
     margin-top: 10px;
     margin-bottom: 10px;
     margin-bottom: 20px;
     height: 350px;
     width: 30%; 
 }
+.postImageHome{
+    width: 100%;
+    height: 150px;
+    /* object-fit: cover;    mantém proporção, corta corretamente */
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
 .searchBox{
     justify-content: right;
     display: flex;
@@ -319,16 +325,17 @@
 }
 .nada{
 
-    margin: auto;
-    text-align: center;
     display: none;
-    text-align: center;
-    align-items: center;
-    color: var(--secundaria);
+    color: var(--principal);
     font-size: 18px;
     background-color: var(--branco2);
     width: 100%;
+    min-height: 250px;
+    
 
+}
+.nada h3{
+    margin: auto;
 }
 .nada.nada{
     display: flex;

@@ -95,6 +95,21 @@ async function listarArtigos() {
     const res = await fetch(API_URL);
     usuarios = await res.json();
 
+    const nada = document.createElement("div");
+    nada.classList.add("nada");
+    
+    if (usuarios.length === 0) {
+      nada.innerHTML =
+        `
+
+        <h3>Publique algum Post<p class="nadaP">Comece sua historia <br> publicando um</p></h3>
+                  
+        `;
+      container.appendChild(nada);
+      return;
+    }
+    nada.innerHTML = "";
+
     container.innerHTML = "";
 
     usuarios.forEach((u) => {

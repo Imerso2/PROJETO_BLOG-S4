@@ -63,7 +63,7 @@ async function listarArtigos(filter = "") {
     if (filtrados.length === 0) {
       nada.innerHTML =
         `
-          <i class="nada text"></i>
+        
           <h3>Nenhum post encontrado</h3>
          
           `;
@@ -82,7 +82,7 @@ async function listarArtigos(filter = "") {
       <button type="button" class="irArtigo">
       <div class="imgBox">
         <img  src="${u.UrlImagem}"
-        class="postImage">
+        class="postImageHome">
       </div>
                 <div class="postTexts">
                     <p class="postTitle">${u.tituloPost}</p>
@@ -121,15 +121,13 @@ async function listarPopular(p) {
     if (usuarios.length === 0) {
       nada.innerHTML =
         `
-          <i class="nada text"></i>
-          <h3>Nenhum post encontrado</h3>
+          <h3>Nenhum post encontrado </h3>
           
           `;
       containerTop.appendChild(nada);
       return;
     }
     nada.innerHTML = "";
-
 
     const cardDestaque = document.createElement("div");
     cardDestaque.classList.add("card-destaque");
@@ -174,7 +172,7 @@ async function listarPopulares(p) {
   if (usuarios.length <= 1) {
     nada.innerHTML =
       `
-          <i class="nada text"></i>
+        
           <h3>Nenhum post encontrado</h3>
          
           `;

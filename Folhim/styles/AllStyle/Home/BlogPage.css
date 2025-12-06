@@ -58,7 +58,7 @@
     top: -50px;
     position: relative;
     margin: auto;
-    background-color: var(--secundaria);
+    background-color: var(--principal);
     padding: 2%;
     text-align: left;
     width: 60%;
@@ -72,18 +72,28 @@
     font-size: 12px;
     font-weight: 600;
     color: var(--texto);
-    background-color: var(--secundaria);
+    background-color: var(--principal-clarinho);
 }
 
 .text{
     font-size: 28px;
     margin: 20px 0 10px;
+    color: var(--branco2);
 }
 
 .assuntoText{
     padding: 20px 0 50px 0;
 }
-
+.metaPost{
+    display: flex;
+    gap: 8px;
+    margin-left: auto;
+    font-size: 13px;
+    color: var(--branco2);
+    align-items: center;
+    text-align: left;
+    margin-left: auto;
+}
 .assuntoText p{
     padding: 20px 0 50px 0;
 }
@@ -107,8 +117,17 @@
     font-size: 18px;
    
 }
-
-
+.assunto h1{
+    color: var(--texto);
+    
+}
+.assunto p{
+    color: var(--principal-clara);
+    
+}
+.assunto{
+    text-align: center;
+}
 
 
 

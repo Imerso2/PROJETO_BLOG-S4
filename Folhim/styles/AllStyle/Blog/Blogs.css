@@ -68,8 +68,7 @@
     border-radius: 5px;
     display: flex;
     flex-wrap: wrap;
-    gap: 2%;
-    justify-content: space-between;
+    gap: 5% ;
     padding: 10px;
     
 }
@@ -107,6 +106,7 @@
     box-shadow: 0 4px 8px var(--texto);
     transition: 300ms;
 }
+
 .postText {
     text-align: left;
     margin-bottom: 10px;
