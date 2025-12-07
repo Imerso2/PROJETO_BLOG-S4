@@ -186,7 +186,7 @@
   display: flex;
 }
 .login{
-
+  padding: 20px;
   background-color: var(--branco2);
   border-radius: 10px;
 }

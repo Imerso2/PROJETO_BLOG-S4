@@ -242,18 +242,7 @@
     height: 16px;
 }
 
-.returnImg {
 
-    width: 30px;
-    height: 30px;
-    border: 3px solid var(--primary-purple);
-    border-radius: 20px;
-}
-.returnImg:hover{
-    box-shadow: 0 2px 4px var(--texto);
-    transition: 300ms;
-    transform: translateX(-5px);
-}
 .headerUserInfo {
     width: 15%;
     display: flex;

@@ -38,11 +38,20 @@
 }
 
 .headerText {
-    margin-right: 15%;
+    margin: 3%;
     font-size: 18px;
     color: var(--texto);
+    text-align: center;
 }
-
+.headerUserTitle{
+    color: var(--principal);
+    font-size: 20px;
+}
+.headerUserTitle:hover{
+    transition: 300ms;
+    transform: translateY(-2px);
+    font-size: 21px;
+}
 .headerText:hover {
     transition: 300ms;
     transform: translateY(-2px);
@@ -128,4 +137,18 @@
 .alterButtons:hover {
     transform: translateY(-5px);
     transition: 300ms;
+}
+.return{
+    margin-left: 15%;
+}
+.returnImg {
+    width: 30px;
+    height: 30px;
+    border: 3px solid var(--primary-purple);
+    border-radius: 20px;
+}
+.returnImg:hover{
+    box-shadow: 0 2px 4px var(--texto);
+    transition: 300ms;
+    transform: translateX(-5px);
 }

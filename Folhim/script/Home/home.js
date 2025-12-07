@@ -32,7 +32,7 @@ async function faztudo() {
 
     listarArtigos();
     listarPopular(usuarios[0]);
-   
+
 
   }
   catch (err) {
@@ -287,78 +287,127 @@ const cadastroBox = document.getElementById("cadastroBox");
 const btnCancelar = document.getElementById("btnCancelar")
 
 cadastro.addEventListener('click', () => {
-  chamarCadastro();
+  cadastroBox.classList.add("ativo");
 });
 btnCancelar.addEventListener('click', () => {
-  cancelarCadastro()
+  cadastroBox.classList.remove("ativo");
+
 });
-function chamarCadastro(){
-  cadastroBox.classList.add("ativo");
-}
-function cancelarCadastro(){
-    cadastroBox.classList.remove("ativo");
-}
 
 const Nome = document.getElementById("Nome")
 const Email = document.getElementById("Email")
 const Senha = document.getElementById("Senha")
-
-
-
-
-
 const cadastroForm = document.getElementById("cadastroForm")
 const error = document.getElementById("error")
 
 
-  cadastroForm.onsubmit = async function (e) {
-    e.preventDefault();
-    try {
-      const res = await fetch(API_URL_U);
-      users = await res.json();
+cadastroForm.onsubmit = async function (e) {
+  e.preventDefault();
+  try {
+    const res = await fetch(API_URL_U);
+    users = await res.json();
 
-      let user = {
-        nome: Nome.value.trim(),
-        email: Email.value.trim(),
-        senha: Senha.value
-      };
-      // verifica se existe usuário com mesmo email ou nome
-      let existe = false;
-      for (let i = 0; i < users.length; i++) {
-        if (users[i].email === user.email && users[i].nome === user.nome) {
-          existe = true;
-          break;
-        }
+    let user = {
+      nome: Nome.value.trim(),
+      email: Email.value.trim(),
+      senha: Senha.value
+    };
+    // verifica se existe usuário com mesmo email ou nome
+    let existe = false;
+    for (let i = 0; i < users.length; i++) {
+      if (users[i].email === user.email && users[i].nome === user.nome) {
+        existe = true;
+        break;
       }
-
-      if (existe) {
-        // mostra erro e não cadastra
-        error.classList.add("ativo")
-        cadastroBox.classList.remove("ativo");
-        return;
-      }
-
-      // cadastra novo usuário
-      await fetch(API_URL_U, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(user),
-      });
-
-      // limpa e fecha o formulário
-      cadastroBox.classList.remove("ativo");
-      cadastroForm.reset();
-     
-
-    } catch (err) {
-      console.log(err);
-      
     }
-  };
-const btnVoltar = document.getElementById("bntVoltar")
 
-btnVoltar.addEventListener('click',()=>{
-chamarCadastro();
-error.classList.remove("ativo")
+    if (existe) {
+      // mostra erro e não cadastra
+      error.classList.add("ativo")
+      cadastroBox.classList.remove("ativo");
+      return;
+    }
+
+    // cadastra novo usuário
+    await fetch(API_URL_U, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(user),
+    });
+
+    // limpa e fecha o formulário
+    cadastroBox.classList.remove("ativo");
+    cadastroForm.reset();
+
+
+  } catch (err) {
+    console.log(err);
+
+  }
+};
+const btnVoltar = document.getElementById("bntVoltar");
+
+btnVoltar.addEventListener('click', () => {
+  cadastroBox.classList.add("ativo");
+  error.classList.remove("ativo");
 });
 
+const login = document.getElementById("login");
+const btnCancelarLogin = document.getElementById("btnCancelarLogin");
+const btnEntrar = document.getElementById("btnLogin");
+const btnEntrar2 = document.getElementById("entrarLogin")
+const LoginForm = document.getElementById("LoginForm");
+const NomeLogin = document.getElementById("NomeLogin");
+const EmailLogin = document.getElementById("EmailLogin");
+const SenhaLogin = document.getElementById("SenhaLogin")
+
+
+btnEntrar.addEventListener('click', () => {
+  login.classList.add("ativo");
+});
+
+btnEntrar2.addEventListener('click', () => {
+  login.classList.add("ativo");
+});
+
+btnCancelarLogin.addEventListener('click', () => {
+  login.classList.remove("ativo")
+});
+
+LoginForm.onsubmit = async function (e) {
+  e.preventDefault();
+  try {
+    const res = await fetch(API_URL_U);
+    users = await res.json();
+    
+    const nome = NomeLogin.value.trim();
+    const email = EmailLogin.value.trim();
+    const senha = SenhaLogin.value;
+    
+    const userEncontrado = users.find(user =>
+      user.nome === nome &&
+      user.email === email &&
+      user.senha === senha
+    );
+
+    let userValido;
+    let id;
+
+    if (userEncontrado !== undefined) {
+      userValido = true;
+      id = userEncontrado.id;
+    }
+    if (!userValido) {
+      alert("Nome, email ou senha incorretos");
+      return;
+    }
+   
+    login.classList.remove("ativo");
+    LoginForm.reset();
+   
+    window.location.href = `../../Pages/Blogs/Blogs.html?id=${id}`
+
+  } catch (err) {
+    console.error(err);
+  }
+};

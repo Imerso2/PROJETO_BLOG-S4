@@ -1,48 +1,7 @@
 {
   "userPost": [
-    {
-      "id": "d38a",
-      "nomePost": "jed e",
-      "tituloPost": "dejdnje",
-      "categoria": "dje dje",
-      "assuntoPost": "ndjedjend",
-      "UrlImagem": "https://i.pinimg.com/736x/5e/d4/32/5ed432b95ee1b82f92f21e5feb6aec9d.jpg",
-      "dataPost": "6 Dez 2025",
-      "Date": 1765021264639
-    },
-    {
-      "id": "558c",
-      "nomePost": "ihby7vuovjh itvti",
-      "tituloPost": "TESTE APAGAR",
-      "categoria": "se for",
-      "assuntoPost": "ksackjndsj ",
-      "UrlImagem": "https://i.pinimg.com/736x/5e/d4/32/5ed432b95ee1b82f92f21e5feb6aec9d.jpg",
-      "dataPost": "6 Dez 2025",
-      "Date": 1765023693289
-    },
-    {
-      "id": "6fd6",
-      "nomePost": "eita que  massa",
-      "tituloPost": "TESTE APAGAR",
-      "categoria": "se for",
-      "assuntoPost": "  hjvt7ft7fgv",
-      "UrlImagem": "https://i.pinimg.com/736x/5e/d4/32/5ed432b95ee1b82f92f21e5feb6aec9d.jpg",
-      "dataPost": "6 Dez 2025",
-      "Date": 1765027251265
-    }
   ],
   "user": [
-    {
-      "id": "3cff",
-      "nome": "renan",
-      "email": "Renancorreia730@gmail.com",
-      "senha": "renan"
-    },
-    {
-      "id": "3742",
-      "nome": "renan",
-      "email": "Renancorreia730@gmail.com",
-      "senha": "renan"
-    }
+   
   ]
 }

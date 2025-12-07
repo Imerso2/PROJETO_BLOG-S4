@@ -1,6 +1,21 @@
-
+const URl = new URL(window.location.href)
+const userId = URl.searchParams.get('id')
+console.log(userId);
 const API_URL = "http://localhost:3000/userPost";
 const API_URL_U = "http://localhost:3000/user";
+
+let userName = "";
+async function getNome(userId) {
+  const res = await fetch(`${API_URL_U}/${userId}`);
+  const user = await res.json();
+  return user.nome;
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
+  userName = await getNome(userId);
+  titleUser.textContent = userName;
+});
+
 //dataaaaaaaaa
 const date = new Date();
 const agora = Date.now()
@@ -15,7 +30,6 @@ const monthString = months[mes];
 const cancelarApagar = document.getElementById("btnExcluir");
 const apagar = document.getElementById("btnCancelarExcluir");
 const btnAdicionar = document.getElementById("btnAdd");
-const nome = document.getElementById("nome");
 const categoria = document.getElementById("categoria")
 const url = document.getElementById("URL");
 const assunto = document.getElementById("assunto");
@@ -28,21 +42,21 @@ const Excluir = document.getElementById("excluirTrasparente");
 const description = document.getElementById("description");
 const excluirDescription = document.getElementById("descriptionExcluir");
 const card = document.createElement("div");
-
+const titleUser = document.getElementById("teste")
 const container = document.getElementById("postsContainer");
 
 let posts = [];
 let IDpost = 0;
 let editId = null;
-
+let user= [];
 
 btnAdicionar.addEventListener('click', () => {
-
+  
   titulo.textContent = "Criar postagem";
   description.textContent = "Preencha os dados no formulario para criar uma postagem"
   criar.classList.add("active");
   editId = null;
-
+  
 });
 
 const btnCancelar = document.getElementById("btnCancelar");
@@ -50,20 +64,21 @@ const btnCancelar = document.getElementById("btnCancelar");
 btnCancelar.addEventListener('click', () => {
   form.reset();
   criar.classList.remove("active");
-
+  
 });
 
 form.onsubmit = async function (e) {
   e.preventDefault();
   let posts = {
-    nomePost: nome.value,
+    nomePost: userName,
     tituloPost: title.value,
     categoria: categoria.value.trim(),
     assuntoPost: assunto.value,
     UrlImagem: url.value.trim(),
     dataPost: `${dia} ${monthString} ${ano}`,
-    Date: agora
-
+    Date: agora,
+    idUser: userId
+    
   };
   try {
     if (editId) {
@@ -79,86 +94,79 @@ form.onsubmit = async function (e) {
         body: JSON.stringify(posts),
       });
     }
-
+    
     criar.classList.remove("active");
     listarArtigos();
     form.reset();
-
+    
   } catch (err) {
     console.error(err);
   }
 };
 
 
-async function listarArtigos() {
+async function listarArtigos(userId) {
   try {
     const res = await fetch(API_URL);
     posts = await res.json();
-
-    const nada = document.createElement("div");
-    nada.classList.add("nada");
+    container.innerHTML = "";
     
-    if (posts.length === 0) {
-      nada.innerHTML = `
-        <h3>Nenhum post encontrado <p class="nadaP">Comece sua história publicando um post</p></h3>
-        
-      `;
+    const filtrados = posts.filter(u =>
+      String(u.idUser) === String(userId)
+    );
+    
+    if (filtrados.length === 0) {
+      const nada = document.createElement("div");
+      nada.classList.add("nada");
+      nada.innerHTML = `<h3>Nenhum post encontrado</h3>`;
       container.appendChild(nada);
       return;
     }
-    nada.innerHTML = "";
 
-    container.innerHTML = "";
-
-    posts.forEach((u) => {
-
+    
+    filtrados.forEach((u) => {
       const card = document.createElement("div");
       card.classList.add("postCard");
 
       card.innerHTML = `
-      <div class="imgBox">
-        <img  src="${u.UrlImagem}"
-        class="postImage">
-      </div>
-                <div class="postTexts">
-                    <p class="postTitle">${u.tituloPost}</p>
-                    <p class="postdescription">${u.assuntoPost}</p>
-                </div>
-                <div class="postInfo">
-                    <img src="../../assets/calendário1.png" alt="" class="postDateIcon">
-                    <p class="postDateText">${u.dataPost}</p>
-                    
-                    <img src="../../assets/contato1.png" alt="" class="postAutorIcon">
-                    <p class="postAuthorText">${u.nomePost}</p>
-                </div>
-                <div class="postButtons">   
-                    <button class="postBtnEditar"> <img src="../../assets/lápis.png" alt="" class="imagEditar"> Editar</button>
-                 
-                    <button class="postBtnExcluir"> <img src="../../assets/lápis.png" alt="" class="imagExcluir"> Excluir</button> 
-                </div>`
+        <div class="imgBox">
+        <img src="${u.UrlImagem}" class="postImage">
+        </div>
+        <div class="postTexts">
+        <p class="postTitle">${u.tituloPost}</p>
+        <p class="postdescription">${u.assuntoPost}</p>
+        </div>
+        <div class="postInfo">
+          <img src="../../assets/calendário1.png" class="postDateIcon">
+          <p class="postDateText">${u.dataPost}</p>
+          <img src="../../assets/contato1.png" class="postAutorIcon">
+          <p class="postAuthorText">${u.nomePost}</p>
+          </div>
+        <div class="postButtons">   
+        <button class="postBtnEditar">Editar</button>
+          <button class="postBtnExcluir">Excluir</button> 
+        </div>
+      `;
+
       container.appendChild(card);
-      console.log("teste");
-
+      
+      
       card.querySelector(".postBtnExcluir").onclick = async () => {
-        excluirTitulo.textContent = "Excluir postagem";
-        excluirDescription.textContent = "Essa ação não pode ser desfeita";
         Excluir.classList.add("active");
-
+        
         cancelarApagar.onclick = () => {
           Excluir.classList.remove("active");
         };
-
-        apagar.addEventListener('click', async () => {
+        
+        apagar.onclick = async () => {
           await fetch(`${API_URL}/${u.id}`, { method: "DELETE" });
-          listarArtigos();
-          console.log("deletado");
           Excluir.classList.remove("active");
-        });
+          listarArtigos(userId);
+        };
       };
 
+
       card.querySelector(".postBtnEditar").onclick = () => {
-        titulo.textContent = "Editar postagem";
-        description.textContent = "Altere os dados no formulario para editar a postagem"
         criar.classList.add("active");
         editId = u.id;
         nome.value = u.nomePost;
@@ -166,12 +174,13 @@ async function listarArtigos() {
         categoria.value = u.categoria;
         url.value = u.UrlImagem;
         assunto.value = u.assuntoPost;
-
       };
-
     });
+    
   } catch (err) {
     console.error(err);
   }
 }
-listarArtigos();
+
+listarArtigos(userId);
+getNome(userId);
