@@ -1,7 +1,40 @@
 {
   "userPost": [
+    {
+      "id": "c475",
+      "nomePost": "a",
+      "tituloPost": "hahahha",
+      "categoria": "se for",
+      "assuntoPost": "ksackjndsj ",
+      "UrlImagem": "https://i.pinimg.com/736x/5e/d4/32/5ed432b95ee1b82f92f21e5feb6aec9d.jpg",
+      "dataPost": "7 Dez 2025",
+      "Date": 1765112216198,
+      "idUser": "58a5"
+    },
+    {
+      "id": "f6be",
+      "nomePost": "a",
+      "tituloPost": "hahahha",
+      "categoria": "se for",
+      "assuntoPost": "ksackjndsj ",
+      "UrlImagem": "https://i.pinimg.com/736x/1a/1c/fe/1a1cfee7445effe651f2248c69facd4b.jpg",
+      "dataPost": "7 Dez 2025",
+      "Date": 1765112216198,
+      "idUser": "58a5"
+    }
   ],
   "user": [
-   
+    {
+      "id": "58a5",
+      "nome": "a",
+      "email": "Renancorreia730@gmail.com",
+      "senha": "a"
+    },
+    {
+      "id": "0722",
+      "nome": "big nose",
+      "email": "renancorreia730@gmail.com",
+      "senha": "a"
+    }
   ]
 }

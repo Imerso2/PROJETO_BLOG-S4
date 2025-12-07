@@ -48,15 +48,15 @@ const container = document.getElementById("postsContainer");
 let posts = [];
 let IDpost = 0;
 let editId = null;
-let user= [];
+let user = [];
 
 btnAdicionar.addEventListener('click', () => {
-  
+
   titulo.textContent = "Criar postagem";
   description.textContent = "Preencha os dados no formulario para criar uma postagem"
   criar.classList.add("active");
   editId = null;
-  
+  listarArtigos(userId);
 });
 
 const btnCancelar = document.getElementById("btnCancelar");
@@ -64,7 +64,7 @@ const btnCancelar = document.getElementById("btnCancelar");
 btnCancelar.addEventListener('click', () => {
   form.reset();
   criar.classList.remove("active");
-  
+
 });
 
 form.onsubmit = async function (e) {
@@ -78,7 +78,7 @@ form.onsubmit = async function (e) {
     dataPost: `${dia} ${monthString} ${ano}`,
     Date: agora,
     idUser: userId
-    
+
   };
   try {
     if (editId) {
@@ -94,13 +94,12 @@ form.onsubmit = async function (e) {
         body: JSON.stringify(posts),
       });
     }
-    
+
     criar.classList.remove("active");
-    listarArtigos();
+    listarArtigos(userId);
     form.reset();
-    
   } catch (err) {
-    console.error(err);
+    console.log(err);
   }
 };
 
@@ -110,20 +109,21 @@ async function listarArtigos(userId) {
     const res = await fetch(API_URL);
     posts = await res.json();
     container.innerHTML = "";
-    
+    const nada = document.createElement("div");
+
     const filtrados = posts.filter(u =>
       String(u.idUser) === String(userId)
     );
-    
+
     if (filtrados.length === 0) {
-      const nada = document.createElement("div");
       nada.classList.add("nada");
       nada.innerHTML = `<h3>Nenhum post encontrado</h3>`;
       container.appendChild(nada);
       return;
     }
+    nada.remove();
 
-    
+
     filtrados.forEach((u) => {
       const card = document.createElement("div");
       card.classList.add("postCard");
@@ -139,25 +139,23 @@ async function listarArtigos(userId) {
         <div class="postInfo">
           <img src="../../assets/calendário1.png" class="postDateIcon">
           <p class="postDateText">${u.dataPost}</p>
-          <img src="../../assets/contato1.png" class="postAutorIcon">
-          <p class="postAuthorText">${u.nomePost}</p>
           </div>
         <div class="postButtons">   
-        <button class="postBtnEditar">Editar</button>
-          <button class="postBtnExcluir">Excluir</button> 
+          <button class="postBtnEditar"> <img src="../../assets/lápis.png" alt="" class="imagEditar"> Editar</button>
+          <button class="postBtnExcluir"> <img src="../../assets/lápis.png" alt="" class="imagExcluir"> Excluir</button>  
         </div>
       `;
 
       container.appendChild(card);
-      
-      
+
+
       card.querySelector(".postBtnExcluir").onclick = async () => {
         Excluir.classList.add("active");
-        
+
         cancelarApagar.onclick = () => {
           Excluir.classList.remove("active");
         };
-        
+
         apagar.onclick = async () => {
           await fetch(`${API_URL}/${u.id}`, { method: "DELETE" });
           Excluir.classList.remove("active");
@@ -176,9 +174,9 @@ async function listarArtigos(userId) {
         assunto.value = u.assuntoPost;
       };
     });
-    
+
   } catch (err) {
-    console.error(err);
+    console.log(err);
   }
 }
 

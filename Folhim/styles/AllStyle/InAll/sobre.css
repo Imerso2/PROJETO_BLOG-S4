@@ -17,14 +17,16 @@
 }
 
 .tudo{
-   
+    
     background-color: var(--principal);
 
 }
 
 .titulo{
-    padding: 20px;
-    color: var(--branco2);
+    margin-left: 10%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: var(--principal-clarinho);
 }
 
 .metade{
@@ -38,92 +40,40 @@
 .textExplicativo {
     color: var(--branco2);
 }
+.ImgBox{
+    width: 200px;
+}
 
 .ImgPrincipalSobre{
+        
     width: 100%;
     display: flex;
     justify-content: space-between;
-
-}
-.ImgBox{
-    max-width: 500px;
-}
-
-
-
-
-.footerMainSobre{
-
-    background-color: var(--principal);
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    margin-top: 8%;
-    justify-content: space-between;
-    align-items: center;
-}
-.footerText{
-    color: var(--branco2);
-    text-align: center;
     
-    width: 40%;
 }
-.footerTitle{
-    color: var(--texto);
-    font-weight: bold;
-    margin-left: 15%;
-    font-size: 24px;
+.responsaveis{
+    justify-content: center;
+    padding: 4%;
+    display: flex;
+    gap: 5%;
 }
-.footerDescription{
-    color: var(--branco2);
-    margin-left: 15%;
-    font-size: 16px;
+.perfilGit{
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
 }
-
-
-.footerLink {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    margin-left: auto;
-    color: var(--branco2);
-    border: none;
-    cursor: pointer;
-    text-align: center;
-    margin-top: 5px;
-    background: none;
-    border: none;
-    font-size: 16px;
-   
-}
-
-.footerLink:hover {
+.perfilGit:hover{
     transition: 300ms;
-    color: var(--branco);
-    font-size: 17px;
-    transform: translateX(-5px);
+    box-shadow: 0 8px 12px var(--texto);
 }
-
-.footerMenus{
-    width: 40%;
-    margin-top: 5%;
-    justify-content: space-between;
-}
-.footerMenus{
-    display: inline-flex;
+.perfilBox{
+    margin: 4%;
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
-.menu{
-    
-    text-align: left;
-    margin-top: 3%;
-    display: block;
-}
-
-.footerCopy{
+.responsaveisTit{
     text-align: center;
-    margin: 1%;    
-    width: 100%;     
-    color: var(--branco2);     
+    color: var(--branco2);
+    margin-top: 5%;
 }

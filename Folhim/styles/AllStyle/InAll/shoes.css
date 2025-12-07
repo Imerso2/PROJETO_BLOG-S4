@@ -25,6 +25,16 @@
     justify-content: space-between;
     align-items: center;
 }
+.footerMainSobre{
+    background-image: linear-gradient(to top, var(--principal-clara) 80%, var(--principal));
+   
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 5%;
+    justify-content: space-between;
+    align-items: center; 
+}
 .footerText{
     color: var(--branco2);
     text-align: center;
@@ -42,8 +52,6 @@
     margin-left: 15%;
     font-size: 16px;
 }
-
-
 .footerLink {
     display: inline-flex;
     align-items: center;
@@ -67,18 +75,41 @@
     font-size: 17px;
     transform: translateX(-5px);
 }
-
+.footerLinkSobre {
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--branco2);
+    cursor: pointer;
+    text-align: center;
+    margin-top: 5px;
+    background: none;
+    border: none;
+    font-size: 18px;
+}
+.footerLinkSobre:hover {
+    
+    transition: 300ms;
+    color: var(--principal-clarinho);
+    
+    transform: translateY(-5px);
+}
 .footerMenus{
     width: 40%;
     margin-top: 5%;
     justify-content: space-between;
-}
-.footerMenus{
     display: inline-flex;
     align-items: center;
 }
-.menu{
+.footerMenusSobre{
+   margin-right: 20%;
+    margin-top: 5%;
+    justify-content: space-between;
+    display: inline-flex;
+    align-items: center;
     
+}
+.menu{
     text-align: left;
     margin-top: 3%;
     display: block;
@@ -93,7 +124,8 @@
 
 .icons{
     height: 17px;
-    width: 17px;  
+    width: 17px;
+    border-radius: 100%; 
 }
 .icons:hover{
    

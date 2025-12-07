@@ -334,11 +334,32 @@ cadastroForm.onsubmit = async function (e) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(user),
     });
-
+    alert("Cadastro Concluido !!!");
     // limpa e fecha o formulário
     cadastroBox.classList.remove("ativo");
     cadastroForm.reset();
+    
+     const userEncontrado = users.find(user =>
+      user.nome === nome &&
+      user.email === email &&
+      user.senha === senha
+    );
 
+    let userValido;
+    let id;
+
+    if (userEncontrado !== undefined) {
+      userValido = true;
+      id = userEncontrado.id;
+    }
+    if (!userValido) {
+      alert("Nome, email ou senha incorretos");
+      return;
+    }
+   
+    login.classList.remove("ativo");
+    LoginForm.reset();
+    window.location.href = `../../Pages/Blogs/Blogs.html?id=${id}`
 
   } catch (err) {
     console.log(err);
@@ -404,10 +425,9 @@ LoginForm.onsubmit = async function (e) {
    
     login.classList.remove("ativo");
     LoginForm.reset();
-   
     window.location.href = `../../Pages/Blogs/Blogs.html?id=${id}`
 
   } catch (err) {
-    console.error(err);
+    console.log(err);
   }
 };

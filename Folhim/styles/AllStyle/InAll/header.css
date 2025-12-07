@@ -79,10 +79,13 @@
 }
 
 .headerMainSobre {
+    background-color: var(--branco2);
+
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 80px;
+    
     border-bottom: 1px solid var(--principal-clara);
 }
 
