@@ -1,17 +1,5 @@
 @import url("../../Global.css");
 
-:root {
-    --texto: #000000;
-    --principal: #263b54;
-    --principal-clara: #3c526d;
-
-    --secundaria: #6d0000;
-    --secundaria-text: #ac4200;
-    --branco2: #cbd5dc;
-    --branco: #ffffff;
-    --principal-clarinho: #4975ab;
-
-}
 
 .headerMain {
     border-bottom: 1px solid var(--principal-clara);

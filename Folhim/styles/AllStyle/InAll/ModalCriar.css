@@ -1,15 +1,6 @@
 @import url("../../Global.css");
 
-:root{
-    --texto: #000000; /*(#370617): home: botao de voltar pra cima, frase grande e lupa; blogPages: titulo, botao de voltar; blog: titulo, botao com seta, botao (novo post(dentro) e botao de criar postagem (salvar(dentro))*/
-    --principal: #263b54; /*(#d00000): home: linha em baixo de "artigo", linha da barra de "pesquisa artigo"; Pages: linha do header e fundo de tecnologia; Blog: todas as linhas que tiver*/
-    --principal-clara: #3c526d; /*(#d00000): home: linha em baixo de "artigo", linha da barra de "pesquisa artigo"; Pages: linha do header e fundo de tecnologia; Blog: todas as linhas que tiver*/
-    --secundaria: #6d0000; /*(#9995a6a2): Home: nada; Pages: nada; Blog: fundo da caixa de criar postagem*/
-    --branco2: #cbd5dc; /*(#370617): Home: fundo do começo e fim, 2 linha da barra de "pesquisar artigos"; Pages: nada; Blog: quando passa a seta em cima de salvar*/
-    --branco: #ffffff; /*(#9d0208): Home: nada; Pages: nada; Blog: nada (acho que não tem em nenhum ou so estou cega de sono mesmo)*/
-     --principal-clarinho: #4975ab;
-     --secundaria-claro:  #b51212;
-}
+
 .criar{
   display: none; /* genial deixa invisible massa demais */
   position: fixed;

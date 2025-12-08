@@ -1,20 +1,6 @@
 @import url("../../Global.css");
 
 
-:root{
-    --texto: #000000;
-    --principal: #263b54;
-    --principal-clara: #3c526d;
-   
-    --secundaria: #6d0000; 
-    --secundaria2: #990404;
-    --secundaria-text: #ac4200;
-    --branco2: #cbd5dc; 
-    --branco: #ffffff;
-    --principal-clarinho: #4975ab;
-
-}
-
 .footerMain{
     background-image: linear-gradient(to top, var(--principal) 60%, var(--principal, rgba(255,255,255,0.15)), var(--branco));
     background-color: var(--principal);
